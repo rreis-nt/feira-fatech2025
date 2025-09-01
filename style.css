@@ -495,6 +495,140 @@ input:focus, textarea:focus, select:focus {
   font-size: 1.05rem;
   margin-bottom: 18px;
 }
+/* Hero top: full-width title + subtitles */
+.hero-top { width:100%; display:flex; flex-direction:column; align-items:center; justify-content:center; margin-bottom:18px; }
+.hero-main { font-family: 'Bebas Neue', sans-serif; font-size:5.6rem; line-height:0.9; color:#ffffff; margin:0 0 8px 0; letter-spacing:2px; text-align:center; }
+.hero-subtitles { color: rgba(255,255,255,0.95); text-align:center; font-weight:500; margin-top:8px; }
+.hero-subtitles .muted { opacity:0.95; font-weight:700; margin-top:6px; }
+
+/* Bottom hero row: center (location) + right (evaluate) */
+.hero-grid { display:grid; grid-template-columns: 1fr 340px; gap:28px; align-items:center; }
+.hero-center { display:flex; justify-content:center; align-items:center; }
+.hero-right { display:flex; justify-content:flex-end; align-items:center; }
+
+.hero-info-card.center { background: rgba(255,255,255,0.06); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); color:#ffffff; padding:18px 22px; border-radius:10px; border:1px solid rgba(255,255,255,0.12); box-shadow:0 8px 24px rgba(2,6,23,0.16); text-align:center; min-width:220px; }
+.hero-info-card.center strong { color:#fff; display:block; margin-bottom:6px; }
+.hero-eval-card { background: rgba(255,255,255,0.06); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); padding:14px 16px; border-radius:10px; text-align:left; border:1px solid rgba(255,255,255,0.12); min-width:220px; max-width:340px; }
+.hero-eval-card .eval-title { color:#ffffff; font-size:1.05rem; margin:0 0 6px 0; font-weight:700; }
+.hero-eval-card .eval-copy { color:rgba(255,255,255,0.9); margin-bottom:10px; font-size:0.95rem; }
+
+
+/* New hero styling to match fatechmendes.com.br */
+.hero-main {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 6.5rem;
+  line-height: 0.85;
+  color: #ffffff;
+  margin: 0 0 8px 0;
+  letter-spacing: 2px;
+}
+.hero-subtitles { color: rgba(255,255,255,0.9); text-align: center; font-weight: 500; }
+.hero-subtitles .muted { opacity: 0.9; font-weight: 700; margin-top: 6px; }
+
+.hero-right-info { display: flex; justify-content: center; }
+.hero-info-card {
+  background: #ffffff;
+  color: #0f172a;
+  padding: 18px 20px;
+  border-radius: 10px;
+  text-align: left;
+  min-width: 220px;
+  box-shadow: 0 10px 30px rgba(2,6,23,0.18);
+}
+.hero-info-card strong { display:block; margin-bottom:8px; font-weight:700; }
+
+/* Adjustments for hero grid proportions */
+.hero-grid { grid-template-columns: 1fr 360px; }
+
+/* (old three-column rules removed) final layout uses .hero-top + .hero-grid (center + right) */
+
+/* make the center info frosted/transparent for harmony */
+.hero-info-card.center {
+  background: rgba(255,255,255,0.06);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  color: #ffffff;
+  padding: 18px 22px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.12);
+  box-shadow: 0 8px 24px rgba(2,6,23,0.16);
+  text-align: center;
+  min-width: 220px;
+}
+.hero-info-card.center strong { color: #fff; display:block; margin-bottom:6px; }
+.hero-eval-card { background: rgba(255,255,255,0.06); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); padding: 14px 16px; border-radius: 10px; text-align: left; border: 1px solid rgba(255,255,255,0.12); min-width: 220px; max-width: 340px; }
+.hero-eval-card .eval-title { color: #ffffff; font-size: 1.05rem; margin: 0 0 6px 0; font-weight:700; }
+.hero-eval-card .eval-copy { color: rgba(255,255,255,0.9); margin-bottom: 10px; font-size: 0.95rem; }
+.hero-eval-card.left { align-self: flex-start; }
+
+
+/* eval button overrides to be light on dark background */
+.hero-eval-card .btn-evaluate { background: linear-gradient(90deg, #16a34a, #059669); color: #fff; }
+
+@media (max-width: 1100px) {
+  .hero-grid { grid-template-columns: 1fr 320px 300px; }
+  .hero-main { font-size: 5.2rem; }
+}
+@media (max-width: 900px) {
+  .hero-grid { grid-template-columns: 1fr; gap: 16px; }
+  .hero-left, .hero-center, .hero-right { justify-content: center; text-align:center; align-items:center; }
+  .hero-eval-card { min-width: auto; text-align:center; }
+  .hero-main { font-size: 3.2rem; }
+}
+
+/* Title wrapper: center the FATECH title above a left-aligned subtitle block */
+.title-wrapper { width: 100%; display:flex; justify-content:center; }
+.subtitle-block { text-align: left; margin-top: 6px; color: rgba(255,255,255,0.95); }
+.subtitle-block div { line-height: 1.25; }
+
+@media (max-width: 900px) {
+  .subtitle-block { text-align: center; }
+}
+
+@media (max-width: 1100px) {
+  .hero-main { font-size: 5.2rem; }
+  .hero-grid { grid-template-columns: 1fr 300px; }
+}
+@media (max-width: 800px) {
+  .hero-grid { grid-template-columns: 1fr; }
+  .hero-main { font-size: 3.2rem; text-align: center; }
+  .hero-right-info { order: 2; margin-top: 12px; }
+}
+
+/* evaluate panel: separate frosted box on the right */
+.eval-panel {
+  background: rgba(255,255,255,0.06);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border-radius: 14px;
+  padding: 20px;
+  text-align: center;
+  border: 1px solid rgba(255,255,255,0.12);
+  box-shadow: 0 10px 28px rgba(2,6,23,0.25);
+}
+.eval-title { color: #ffffff; font-size: 1.4rem; margin: 0 0 6px 0; font-weight: 700; }
+.eval-sub { color: rgba(255,255,255,0.9); margin-bottom: 12px; }
+
+.btn-evaluate {
+  display: inline-block;
+  background: linear-gradient(90deg, #2b7be9, #1f4fd8);
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 700;
+  box-shadow: 0 8px 20px rgba(16,24,40,0.36);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+.btn-evaluate:hover { transform: translateY(-4px); box-shadow: 0 16px 34px rgba(16,24,40,0.4); }
+
+/* small screens: stack hero vertically */
+@media (max-width: 900px) {
+  .hero-grid { grid-template-columns: 1fr; gap: 14px; }
+  .hero-panel { order: 1; }
+  .eval-panel { order: 2; }
+  .hero-panel h2 { font-size: 1.8rem; }
+}
 /* Ajuste para telas pequenas */
 @media (max-width: 640px) {
   .frosted-box { padding: 18px; }
@@ -726,4 +860,36 @@ section#alimentacao .section-content h1, section#atracoes .section-content h1 {
 
 #organizacao p, #organizacao li {
   color: rgba(255,255,255,0.95) !important;
+}
+
+/* Adjust hero grid layout */
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 28px;
+  align-items: center;
+}
+
+.hero-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.hero-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.hero-info-card.center p {
+  text-align: left;
 }
