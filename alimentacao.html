@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Praça de Alimentação - FATECH</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-50 text-gray-800">
+  <!-- unified header (from index.html) -->
+  <header class="bg-blue-900 text-white px-8 py-4 shadow-lg fixed w-full top-0 left-0 z-50">
+    <div class="max-w-6xl mx-auto flex justify-between items-center">
+      <h1 class="text-3xl font-bold flex items-center gap-4 tracking-widest" style="font-family: 'Bebas Neue', 'Poppins', sans-serif; letter-spacing: 2px;">
+        <img src="img/fatech.png" alt="FATECH" style="height:3rem; width:auto; background:transparent;" />
+      </h1>
+      <nav class="flex gap-8 text-lg font-semibold">
+        <a href="index.html#sobre" class="hover:text-blue-300 transition-colors duration-200">Sobre</a>
+        <a href="index.html#faq" class="hover:text-blue-300 transition-colors duration-200">Perguntas</a>
+        <a href="index.html#avaliacao" class="hover:text-blue-300 transition-colors duration-200">Avaliação</a>
+        <a href="responsaveis.html" class="hover:text-blue-300 transition-colors duration-200">Responsáveis</a>
+      </nav>
+    </div>
+  </header>
+  <div class="h-24"></div>
+
+  <main class="max-w-6xl mx-auto p-6">
+    <h1 class="text-3xl font-semibold mb-6">Praça de Alimentação</h1>
+    <p class="mb-6">Exemplos de barracas e cardápios. Ajuste a quantidade X conforme necessário.</p>
+
+    <div class="cards-grid">
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1551218808-94e220e084d2?auto=format&fit=crop&w=900&q=60" alt="Hambúrguer">
+        <div class="card-body">
+          <h4>Hambúrguer Artesanal</h4>
+          <p>Descrição, ingredientes e preço (exemplo).</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&w=900&q=60" alt="Pastel e doces">
+        <div class="card-body">
+          <h4>Pastel & Doces</h4>
+          <p>Descrição, opções de doces e preços (exemplo).</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1542444459-db9ca5f7b6e8?auto=format&fit=crop&w=900&q=60" alt="Cafeteria">
+        <div class="card-body">
+          <h4>Cafeteria</h4>
+          <p>Opções de bebidas e lanches (exemplo).</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- unified footer with responsible names -->
+  <footer class="bg-blue-900 text-white py-6 text-center footer-responsaveis">
+    <p>&copy; 2025 FATECH - Feira Tecnológica. Responsável pelo site: <strong>Ryan Antonio</strong>. Responsável N8N: <strong>Tiago Norato</strong>.</p>
+  </footer>
+</body>
+</html>

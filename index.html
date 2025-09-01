@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FATECH - Feira Tecnológica</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+  <!-- unified header (explicit from index) -->
+  <header class="bg-blue-900 text-white px-8 py-4 shadow-lg fixed w-full top-0 left-0 z-50">
+    <div class="max-w-6xl mx-auto flex justify-between items-center">
+      <h1 class="text-3xl font-bold flex items-center gap-4 tracking-widest" style="font-family: 'Bebas Neue', 'Poppins', sans-serif; letter-spacing: 2px;">
+        <img src="img/fatech.png" alt="FATECH" style="height:3rem; width:auto; background:transparent;" />
+      </h1>
+      <nav class="flex gap-8 text-lg font-semibold">
+        <a href="#sobre" class="hover:text-blue-300 transition-colors duration-200">Sobre</a>
+        <a href="#faq" class="hover:text-blue-300 transition-colors duration-200">Perguntas</a>
+        <a href="#avaliacao" class="hover:text-blue-300 transition-colors duration-200">Avaliação</a>
+        <a href="responsaveis.html" class="hover:text-blue-300 transition-colors duration-200">Responsáveis</a>
+      </nav>
+    </div>
+  </header>
+  <div class="h-24"></div>
+
+  <!-- Hero -->
+  <section class="section-bg" style="background-image: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1400&q=60'); padding:100px 0;">
+    <div class="section-overlay"></div>
+    <div class="max-w-6xl mx-auto section-content px-6">
+      <div class="frosted-box mx-auto" style="max-width:800px;">
+        <h2 class="text-4xl font-bold mb-4">Feira Tecnológica da FATECH</h2>
+        <p class="text-lg mb-6">
+          Um espaço de inovação, aprendizado e criatividade desenvolvido pelos alunos do Colégio Estadual Mendes Gonçalves.
+        </p>
+        <a href="#avaliacao" class="bg-blue-900 text-white px-6 py-3 rounded-lg shadow-md hover:bg-blue-700">
+          Avalie Nossa Feira
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sobre -->
+  <section id="sobre" class="section-bg" style="background-image: url('https://cdn.pixabay.com/photo/2024/06/02/14/11/background-8804313_1280.jpg'); padding:80px 0;">
+    <div class="section-overlay"></div>
+    <div class="max-w-6xl mx-auto section-content px-6">
+      <h3 class="text-3xl font-semibold mb-4">SOBRE A FEIRA</h3>
+      <div class="frosted-panel mx-auto">
+        <div class="sobre-grid">
+          <div class="sobre-media">
+            <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=900&q=60" alt="Feira - exposição" />
+          </div>
+          <div class="sobre-body">
+            <p class="text-lg leading-relaxed">
+              A FATECH – Feira de Administração e Tecnologia Mendes Gonçalves é um evento que vai além de uma simples feira.
+              É um ambiente de conhecimento, aprendizagem e inovação, onde os estandes são focados em apresentar projetos
+              desenvolvidos pelos alunos de forma envolvente e atrativa. Cada estande busca proporcionar experiências práticas,
+              mostrando empreendedorismo, tecnologia e criatividade.
+            </p>
+            <a class="btn-primary mt-4" href="organizacao.html" target="_blank" rel="noopener">Continue lendo</a>
+          </div>
+          <aside class="sobre-info">
+            <div class="info-box">
+              <strong>26 e 27 de setembro de 2024</strong>
+              <p>Colégio Estadual Mendes Gonçalves<br>Guaíra - Paraná</p>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="bg-gray-100 py-16 px-6">
+    <div class="max-w-4xl mx-auto">
+      <h3 class="text-3xl font-semibold mb-8 text-center">Perguntas Frequentes</h3>
+      <div class="space-y-6">
+
+        <div>
+          <h4 class="text-xl font-bold">📌 O que é a FATECH?</h4>
+          <p>A FATECH é a Feira de Administração e Tecnologia Mendes Gonçalves, organizada pelos alunos do colégio
+          para apresentar projetos criativos e tecnológicos.</p>
+        </div>
+
+        <div>
+          <h4 class="text-xl font-bold">📅 Quando e onde acontece?</h4>
+          <p>O evento acontece nos dias <b>26 e 27 de setembro</b> no Colégio Estadual Mendes Gonçalves, em Guaíra – Paraná.</p>
+        </div>
+
+        <div>
+          <h4 class="text-xl font-bold">👩‍💻 Quem participa da feira?</h4>
+          <p>Alunos dos cursos técnicos de Administração, Desenvolvimento de Sistemas e Informática. Cada grupo é
+          responsável por uma parte da feira, desde estandes até o site e a praça de alimentação.</p>
+        </div>
+
+        <div>
+          <h4 class="text-xl font-bold">🍔 Vai ter praça de alimentação?</h4>
+          <p>Sim! Com opções variadas como hambúrguer artesanal, pastel, cachorro-quente, doces, cafés e muito mais.</p>
+        </div>
+
+        <div>
+          <h4 class="text-xl font-bold">🎯 Qual o propósito da feira?</h4>
+          <p>Estimular o empreendedorismo e a tecnologia, aplicando na prática o que os alunos aprendem em sala de aula.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Atrações (prévia) -->
+  <section id="atracoes" class="section-bg" style="background-image: url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1400&q=60'); padding:80px 0;">
+    <div class="section-overlay"></div>
+    <div class="max-w-6xl mx-auto section-content px-6">
+      <h3 class="text-3xl font-semibold mb-6">Atrações em destaque</h3>
+      <div class="cards-grid mb-6">
+        <!-- Exemplo de X cards; ajuste a quantidade conforme necessário -->
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=900&q=60" alt="Atração 1">
+          <div class="card-body">
+            <h4>Robótica</h4>
+            <p>Equipe de robótica apresentando soluções e competições com protótipos interativos.</p>
+            <a class="btn-primary" href="atracoes.html">Veja mais</a>
+          </div>
+        </div>
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=900&q=60" alt="Atração 2">
+          <div class="card-body">
+            <h4>Impressora 3D</h4>
+            <p>Demonstração de impressão 3D em tempo real e aplicações práticas.</p>
+            <a class="btn-primary" href="atracoes.html">Veja mais</a>
+          </div>
+        </div>
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=900&q=60" alt="Atração 3">
+          <div class="card-body">
+            <h4>Automação Residencial</h4>
+            <p>Projetos que mostram como integrar dispositivos para melhorar o dia a dia.</p>
+            <a class="btn-primary" href="atracoes.html">Veja mais</a>
+          </div>
+        </div>
+      </div>
+      <a class="btn-outline" href="atracoes.html">Todas as atrações</a>
+    </div>
+  </section>
+
+  <!-- Praça de Alimentação (prévia) -->
+  <section id="alimentacao" class="section-bg" style="background-image: url('https://images.unsplash.com/photo-1525755662778-989d0524087e?auto=format&fit=crop&w=1400&q=60'); padding:80px 0;">
+    <div class="section-overlay"></div>
+    <div class="max-w-6xl mx-auto section-content px-6">
+      <h3 class="text-3xl font-semibold mb-6">Praça de Alimentação</h3>
+      <div class="cards-grid mb-6">
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1551218808-94e220e084d2?auto=format&fit=crop&w=900&q=60" alt="Alimento 1">
+          <div class="card-body">
+            <h4>Hambúrguer Artesanal</h4>
+            <p>Deliciosos hambúrgueres preparados pelos alunos e parceiros locais.</p>
+            <a class="btn-primary" href="alimentacao.html">Veja mais</a>
+          </div>
+        </div>
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&w=900&q=60" alt="Alimento 2">
+          <div class="card-body">
+            <h4>Pastel & Doces</h4>
+            <p>Opções rápidas e sobremesas artesanais para todos os gostos.</p>
+            <a class="btn-primary" href="alimentacao.html">Veja mais</a>
+          </div>
+        </div>
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1542444459-db9ca5f7b6e8?auto=format&fit=crop&w=900&q=60" alt="Alimento 3">
+          <div class="card-body">
+            <h4>Cafeteria</h4>
+            <p>Bebidas quentes e lanches para quem quer descansar e conversar.</p>
+            <a class="btn-primary" href="alimentacao.html">Veja mais</a>
+          </div>
+        </div>
+      </div>
+      <a class="btn-outline" href="alimentacao.html">Veja todos</a>
+    </div>
+  </section>
+
+  <!-- Avaliação -->
+  <section id="avaliacao" class="section-bg" style="background-image: url('https://cdn.pixabay.com/photo/2024/06/02/14/11/background-8804313_1280.jpg'); padding:80px 0;">
+    <div class="section-overlay"></div>
+    <div class="max-w-4xl mx-auto section-content py-16 px-6">
+      <h3 class="text-3xl font-semibold mb-6 text-center">Sua Avaliação</h3>
+      <form id="feedbackForm" class="space-y-6 bg-white shadow-lg rounded-2xl p-8">
+
+        <div>
+          <label class="block font-semibold mb-2">1. O que você achou da nossa feira?</label>
+          <textarea id="pergunta1" class="w-full p-3 border rounded-lg" rows="2"></textarea>
+        </div>
+
+        <div>
+          <label class="block font-semibold mb-2">2. Qual projeto você achou mais legal?</label>
+          <select id="pergunta2" class="w-full p-3 border rounded-lg">
+            <option value="">Selecione</option>
+            <option>Projeto 1 - Robótica</option>
+            <option>Projeto 2 - Impressora 3D</option>
+            <option>Projeto 3 - Automação Residencial</option>
+            <option>Projeto 4 - Teste</option>
+            <option>Projeto 5 - Site da Feira / Avaliação</option>
+            <option>Outro</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block font-semibold mb-2">3. Como você avalia este site? (1 a 5)</label>
+          <select id="pergunta3" class="w-full p-3 border rounded-lg">
+            <option value="">Selecione</option>
+            <option>1 - Muito Ruim</option>
+            <option>2 - Ruim</option>
+            <option>3 - Regular</option>
+            <option>4 - Bom</option>
+            <option>5 - Excelente</option>
+          </select>
+        </div>
+
+        <button type="button" onclick="enviarWhatsApp()" 
+          class="bg-green-600 text-white px-6 py-3 rounded-lg shadow-md hover:bg-green-700">
+          📲 Enviar pelo WhatsApp
+        </button>
+
+      </form>
+    </div>
+  </section>
+
+  <!-- unified footer with responsible names -->
+  <footer class="bg-blue-900 text-white py-6 text-center footer-responsaveis">
+    <p>&copy; 2025 FATECH - Feira Tecnológica. Responsável pelo site: <strong>Ryan Antonio</strong>. Responsável N8N: <strong>Tiago Norato</strong>.</p>
+  </footer>
+
+  <!-- Add subtle background images to header/footer and page base via inline style attributes -->
+  <script>
+    // Apply a random background image to each section with class 'section-bg' for visual harmony
+    (function(){
+      const images = [
+        'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1400&q=60',
+        'https://cdn.pixabay.com/photo/2024/06/02/14/11/background-8804313_1280.jpg',
+        'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1400&q=60',
+        'https://images.unsplash.com/photo-1525755662778-989d0524087e?auto=format&fit=crop&w=1400&q=60'
+      ];
+      document.querySelectorAll('.section-bg').forEach((el,i)=>{
+        const img = images[i % images.length];
+        el.style.backgroundImage = `url('${img}')`;
+      });
+
+    })();
+  </script>
+
+  <script>
+    function enviarWhatsApp() {
+      const pergunta1 = document.getElementById("pergunta1").value;
+      const pergunta2 = document.getElementById("pergunta2").value;
+      const pergunta3 = document.getElementById("pergunta3").value;
+
+      const msg = `📋 Avaliação da Feira FATECH:%0A%0A` +
+                  `1. O que achou da feira? %0A- ${pergunta1}%0A%0A` +
+                  `2. Projeto mais legal: %0A- ${pergunta2}%0A%0A` +
+                  `3. Avaliação do site: %0A- ${pergunta3}`;
+
+      const telefone = "5544920029403"; // <-- Troca para o número oficial
+      const url = `https://wa.me/${telefone}?text=${msg}`;
+      window.open(url, "_blank");
+    }
+  </script>
+
+</body>
+</html>
