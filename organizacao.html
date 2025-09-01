@@ -9,19 +9,45 @@
 </head>
 <body class="bg-gray-50 text-gray-800">
   <header class="bg-blue-900 text-white px-8 py-4 shadow-lg fixed w-full top-0 left-0 z-50">
-    <div class="max-w-6xl mx-auto flex justify-between items-center">
-      <h1 class="text-3xl font-bold flex items-center gap-4 tracking-widest" style="font-family: 'Bebas Neue', 'Poppins', sans-serif; letter-spacing: 2px;">
-        <img src="img/fatech.png" alt="FATECH" style="height:3rem; width:auto; background:transparent;" />
-      </h1>
-      <nav class="flex gap-8 text-lg font-semibold">
-        <a href="index.html#sobre" class="hover:text-blue-300 transition-colors duration-200">Sobre</a>
-        <a href="index.html#faq" class="hover:text-blue-300 transition-colors duration-200">Perguntas</a>
-        <a href="index.html#avaliacao" class="hover:text-blue-300 transition-colors duration-200">Avaliação</a>
-        <a href="responsaveis.html" class="hover:text-blue-300 transition-colors duration-200">Responsáveis</a>
-      </nav>
+    <div class="max-w-6xl mx-auto flex items-center">
+      <div class="flex items-center">
+        <button id="menu-toggle" class="text-white focus:outline-none">
+          <div class="hamburger-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </button>
+        <img src="img/fatech.png" alt="FATECH" style="height:3rem; width:auto; background:transparent; margin-left:8px;" />
+      </div>
     </div>
   </header>
+
+  <div id="sidebar-menu" class="fixed top-0 left-0 w-64 h-full bg-blue-900 text-white transform -translate-x-full transition-transform duration-300">
+    <button id="menu-close" class="absolute top-4 right-4 text-white">&times;</button>
+    <nav class="flex flex-col gap-4 p-8">
+      <a href="index.html#sobre" class="hover:text-blue-300 transition-colors duration-200">Sobre</a>
+      <a href="index.html#faq" class="hover:text-blue-300 transition-colors duration-200">Perguntas</a>
+      <a href="index.html#avaliacao" class="hover:text-blue-300 transition-colors duration-200">Avaliação</a>
+      <a href="responsaveis.html" class="hover:text-blue-300 transition-colors duration-200">Responsáveis</a>
+    </nav>
+  </div>
+
   <div class="h-24"></div>
+
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const menuClose = document.getElementById('menu-close');
+    const sidebarMenu = document.getElementById('sidebar-menu');
+
+    menuToggle.addEventListener('click', () => {
+      sidebarMenu.classList.remove('-translate-x-full');
+    });
+
+    menuClose.addEventListener('click', () => {
+      sidebarMenu.classList.add('-translate-x-full');
+    });
+  </script>
 
   <main>
     <section id="organizacao" class="section-bg responsaveis-bg" style="padding:80px 0;">
