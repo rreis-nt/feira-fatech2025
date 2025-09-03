@@ -23,38 +23,15 @@
     </div>
   </header>
 
-  <div style="height: 24px; background: rgba(0, 56, 139, 0.8); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);"></div>
-
-  <!-- Sidebar Menu -->
-    <div id="sidebar-overlay" class="fixed inset-0 bg-black bg-opacity-50 opacity-0 pointer-events-none transition-opacity duration-300 z-40"></div>
-  <nav id="sidebar-menu" class="fixed top-0 left-0 w-64 h-full bg-gradient-to-b from-blue-800 to-blue-900 shadow-2xl transform -translate-x-full transition-transform duration-300 z-50 flex flex-col">
-    <div class="flex justify-between items-center p-4 border-b border-white/20">
-      <span class="text-white font-semibold text-lg">Menu</span>
-      <button id="menu-close" aria-label="Close menu" class="text-white w-8 h-8 flex items-center justify-center hover:bg-white/10 rounded-lg text-2xl focus:outline-none focus:ring-2 focus:ring-white">&times;</button>
-    </div>
-    <div class="flex flex-col py-4 flex-grow overflow-y-auto">
-      <a href="index.html#sobre" class="flex items-center gap-3 text-white py-3 px-4 hover:bg-white/10 rounded-lg transition-colors border-b border-white/20">
-        <span class="w-6 text-center">🏠</span> Início
-      </a>
-      <a href="index.html#faq" class="flex items-center gap-3 text-white py-3 px-4 hover:bg-white/10 rounded-lg transition-colors border-b border-white/20">
-        <span class="w-6 text-center">ℹ️</span> Sobre
-      </a>
-      <a href="index.html#faq" class="flex items-center gap-3 text-white py-3 px-4 hover:bg-white/10 rounded-lg transition-colors border-b border-white/20">
-        <span class="w-6 text-center">❓</span> Perguntas
-      </a>
-      <a href="index.html#avaliacao" class="flex items-center gap-3 text-white py-3 px-4 hover:bg-white/10 rounded-lg transition-colors border-b border-white/20">
-        <span class="w-6 text-center">⭐</span> Avaliação
-      </a>
-      <a href="responsaveis.html" class="flex items-center gap-3 text-white py-3 px-4 hover:bg-white/10 rounded-lg transition-colors">
-        <span class="w-6 text-center">👥</span> Responsáveis
-      </a>
-    </div>
-    <div class="p-4 text-xs text-white/80 border-t border-white/20">
-      <p class="mb-1">FATECH 2025</p>
-      <p class="mb-1">Site: <span class="text-green-400">Ryan Antonio</span></p>
-      <p>N8N: <span class="text-green-400">Tiago Norato</span></p>
-    </div>
-  </nav>
+  <div id="sidebar-menu" class="fixed top-0 left-0 w-64 h-full bg-blue-900 text-white transform -translate-x-full transition-transform duration-300">
+    <button id="menu-close" class="absolute top-4 right-4 text-white">&times;</button>
+    <nav class="flex flex-col gap-4 p-8">
+      <a href="index.html#sobre" class="hover:text-blue-300 transition-colors duration-200">Sobre</a>
+      <a href="index.html#faq" class="hover:text-blue-300 transition-colors duration-200">Perguntas</a>
+      <a href="index.html#avaliacao" class="hover:text-blue-300 transition-colors duration-200">Avaliação</a>
+      <a href="responsaveis.html" class="hover:text-blue-300 transition-colors duration-200">Responsáveis</a>
+    </nav>
+  </div>
 
   <div class="h-24"></div>
 
@@ -62,59 +39,14 @@
     const menuToggle = document.getElementById('menu-toggle');
     const menuClose = document.getElementById('menu-close');
     const sidebarMenu = document.getElementById('sidebar-menu');
-    const sidebarOverlay = document.getElementById('sidebar-overlay');
-    const bar1 = document.getElementById('bar1');
-    const bar2 = document.getElementById('bar2');
-    const bar3 = document.getElementById('bar3');
-    const logoLink = document.querySelector('a[href="index.html"]');
 
-    function openMenu() {
-      sidebarOverlay.classList.remove('opacity-0', 'pointer-events-none');
+    menuToggle.addEventListener('click', () => {
       sidebarMenu.classList.remove('-translate-x-full');
-      document.body.style.overflow = 'hidden';
-      menuToggle.classList.add('active');
-      // Animate hamburger to X
-      bar1.style.transform = 'rotate(45deg) translate(5px, 5px)';
-      bar2.style.opacity = '0';
-      bar3.style.transform = 'rotate(-45deg) translate(5px, -5px)';
-    }
-
-    function closeMenu() {
-      sidebarOverlay.classList.add('opacity-0', 'pointer-events-none');
-      sidebarMenu.classList.add('-translate-x-full');
-      document.body.style.overflow = '';
-      menuToggle.classList.remove('active');
-      // Reset hamburger animation
-      bar1.style.transform = 'none';
-      bar2.style.opacity = '1';
-      bar3.style.transform = 'none';
-    }
-
-    function toggleMenu() {
-      if (sidebarMenu.classList.contains('-translate-x-full')) {
-        openMenu();
-      } else {
-        closeMenu();
-      }
-    }
-
-    menuToggle.addEventListener('click', toggleMenu);
-    menuClose.addEventListener('click', closeMenu);
-    sidebarOverlay.addEventListener('click', closeMenu);
-
-    // Close menu when clicking internal links
-    document.querySelectorAll('#sidebar-menu a[href^="#"]').forEach(link => {
-      link.addEventListener('click', closeMenu);
     });
 
-    // Clicking the logo returns to the main menu (index.html)
-    if (logoLink) {
-      logoLink.addEventListener('click', function(event) {
-        event.preventDefault();
-        closeMenu();
-        window.location.href = 'index.html';
-      });
-    }
+    menuClose.addEventListener('click', () => {
+      sidebarMenu.classList.add('-translate-x-full');
+    });
   </script>
 
   <main>

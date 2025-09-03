@@ -28,7 +28,7 @@ html, body {
 /* headings more human and characterful */
 h1, h2, h3, h4, h5 {
   font-family: 'Merriweather', Georgia, 'Times New Roman', serif;
-  color: #ffffff;
+  color: #071431;
   letter-spacing: -0.2px;
 }
 
@@ -60,7 +60,6 @@ header {
   background-image: linear-gradient(90deg, rgba(2,6,23,0.85), rgba(2,6,23,0.65)), url('img/gradiente azul.jpg');
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
   box-shadow: 0 2px 10px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
@@ -212,7 +211,6 @@ section.bg-blue-100 a:hover {
   background-image: linear-gradient(180deg, rgba(2,6,23,0.45), rgba(2,6,23,0.35)), url('img/interrogacao.png');
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
   color: #fff;
   border-top: 3px solid rgba(255,255,255,0.06);
   overflow: hidden;
@@ -360,44 +358,12 @@ footer a:hover {
   animation: fadeIn 0.8s ease-out forwards;
 }
 
-/* Bounce animation for navbar links */
-@keyframes bounce {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-6px);
-  }
-}
-
-.bounce-hover:hover {
-  animation: bounce 0.4s ease;
-}
-
-/* Hamburger icon to X animation */
-.hamburger-icon span {
-  transition: all 0.3s ease;
-}
-
-.hamburger-icon.open span:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
-}
-
-.hamburger-icon.open span:nth-child(2) {
-  opacity: 0;
-}
-
-.hamburger-icon.open span:nth-child(3) {
-  transform: rotate(-45deg) translate(7px, -6px);
-}
-
 /* =========================
    SECTIONS BACKGROUNDS & CARDS
 ========================= */
 .section-bg {
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
   background-repeat: no-repeat;
   position: relative;
   color: #fff;
@@ -701,17 +667,12 @@ input:focus, textarea:focus, select:focus {
   width: 100%;
   height: 180px;
   overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 .person-card img {
-  width: 84px;
-  height: 84px;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   display: block;
-  border-radius: 8px;
-  margin: 12px auto 0 auto;
 }
 .person-card .person-body {
   padding: 14px;
@@ -726,8 +687,7 @@ input:focus, textarea:focus, select:focus {
 }
 .person-card p {
   margin: 0;
-  color: #ffffff;
-  font-weight: 700;
+  color: rgba(255,255,255,0.9);
 }
 .person-card .badge {
   margin-top: 8px;
@@ -751,7 +711,6 @@ input:focus, textarea:focus, select:focus {
   background-image: linear-gradient(180deg, rgba(2,6,23,0.6), rgba(2,6,23,0.45)), url('img/wppazul.jpg');
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
   background-repeat: no-repeat;
   color: #fff;
 }
@@ -1017,14 +976,4 @@ header img {
   height: 3px;
   background-color: white;
   border-radius: 2px;
-}
-
-/* Sidebar nav dividers */
-.sidebar-nav a {
-  border-bottom: 1px solid rgba(255,255,255,0.3);
-  padding-bottom: 8px;
-}
-
-.sidebar-nav a:last-child {
-  border-bottom: none;
 }
