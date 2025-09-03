@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Notícia 1 - Título da Primeira Notícia</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../style.css" />
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+</head>
+<body class="bg-white text-gray-800" style="background-image: url('../img/news.jpg'); background-size: cover; background-position: center;">
+
+  <!-- unified header -->
+  <header class="bg-blue-900 text-white px-8 py-4 shadow-lg fixed w-full top-0 left-0 z-50">
+    <div class="max-w-6xl mx-auto flex items-center">
+      <div class="flex items-center">
+        <button id="menu-toggle" class="text-white focus:outline-none">
+          <div class="hamburger-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </button>
+        <img src="../img/fatech.png" alt="FATECH" style="height:3rem; width:auto; background:transparent; margin-left:8px;" />
+      </div>
+    </div>
+  </header>
+  <div style="height: 24px; background: rgba(0, 56, 139, 0.8); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);"></div>
+
+  <!-- Sidebar Menu -->
+  <div id="sidebar-overlay" class="fixed inset-0 bg-black bg-opacity-50 opacity-0 pointer-events-none transition-opacity duration-300 z-40"></div>
+  <nav id="sidebar-menu" class="fixed top-0 left-0 w-64 h-full bg-gradient-to-b from-blue-800 to-blue-900 shadow-2xl transform -translate-x-full transition-transform duration-300 z-50 flex flex-col">
+    <div class="flex justify-between items-center p-4 border-b border-white/20">
+      <span class="text-white font-semibold text-lg">Menu</span>
+      <button id="menu-close" aria-label="Close menu" class="text-white w-8 h-8 flex items-center justify-center hover:bg-white/10 rounded-lg text-2xl focus:outline-none focus:ring-2 focus:ring-white">&times;</button>
+    </div>
+    <div class="flex flex-col py-4 flex-grow overflow-y-auto">
+      <a href="../index.html" class="flex items-center gap-3 text-white py-3 px-4 hover:bg-white/10 rounded-lg transition-colors border-b border-white/20">
+        <span class="w-6 text-center">🏠</span> Início
+      </a>
+      <a href="../index.html#sobre" class="flex items-center gap-3 text-white py-3 px-4 hover:bg-white/10 rounded-lg transition-colors border-b border-white/20">
+        <span class="w-6 text-center">ℹ️</span> Sobre
+      </a>
+      <a href="../index.html#faq" class="flex items-center gap-3 text-white py-3 px-4 hover:bg-white/10 rounded-lg transition-colors border-b border-white/20">
+        <span class="w-6 text-center">❓</span> Perguntas
+      </a>
+      <a href="../index.html#avaliacao" class="flex items-center gap-3 text-white py-3 px-4 hover:bg-white/10 rounded-lg transition-colors border-b border-white/20">
+        <span class="w-6 text-center">⭐</span> Avaliação
+      </a>
+      <a href="../responsaveis.html" class="flex items-center gap-3 text-white py-3 px-4 hover:bg-white/10 rounded-lg transition-colors">
+        <span class="w-6 text-center">👥</span> Responsáveis
+      </a>
+    </div>
+    <div class="p-4 text-xs text-white/80 border-t border-white/20">
+      <p class="mb-1">FATECH 2025</p>
+      <p class="mb-1">Site: <span class="text-green-400">Ryan Antonio</span></p>
+      <p>N8N: <span class="text-green-400">Tiago Norato</span></p>
+    </div>
+  </nav>
+
+  <!-- Overlay for darkening background -->
+  <div id="menu-overlay" class="fixed inset-0 bg-black bg-opacity-50 opacity-0 pointer-events-none transition-opacity duration-500 z-40"></div>
+
+  <main class="max-w-6xl mx-auto px-6 py-24">
+    <div class="bg-white bg-opacity-90 rounded-lg shadow-lg p-6">
+      <h1 class="text-4xl font-bold mb-6 news-title">⚠️Não haverá torneio de jogos eletrônicos esse ano!⚠️</h1>
+      <!-- Swiper -->
+      <div class="swiper mySwiper mb-6 rounded-lg shadow-lg">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="../img/campeonato.jpg" alt="Campeonato" class="max-w-full h-auto rounded-lg" />
+          </div>
+          <div class="swiper-slide">
+            <img src="../img/campeao.jpg" alt="Campeão" class="max-w-full h-auto rounded-lg" />
+          </div>
+        </div>
+        <!-- Navigation buttons -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <!-- Pagination dots -->
+        <div class="swiper-pagination"></div>
+      </div>
+      <p class="mb-6 text-lg leading-relaxed">
+        <div class="max-w-3xl mx-auto bg-white bg-opacity-10 backdrop-blur-md p-6 rounded-lg shadow-lg">
+  <h1 class="text-2xl font-bold mb-4 text-center text-blue-900">
+    Feira FaTech 2025 sem torneio de Valorant, mas cheia de novidades
+  </h1>
+
+  <p class="text-gray-700 mb-4">
+    A tradicional <strong>Feira FaTech</strong> está de volta em 2025 e promete surpreender mais uma vez a comunidade escolar e o público visitante. 
+    Porém, uma das atrações mais esperadas dos últimos anos, o <strong>torneio de Valorant</strong>, não acontecerá nesta edição.
+  </p>
+
+  <p class="text-gray-700 mb-4">
+    A decisão foi tomada pela organização, mas a feira continua com um objetivo claro: proporcionar experiências únicas e dar espaço 
+    para os alunos mostrarem suas habilidades, criatividade e dedicação em diversos projetos.
+  </p>
+
+  <p class="text-gray-700 mb-4">
+    Mesmo sem a competição de e-sports, os visitantes terão a oportunidade de conhecer trabalhos inovadores, interagir com apresentações 
+    e participar de momentos que certamente vão marcar esta edição da Feira FaTech.
+  </p>
+
+  <p class="text-gray-700 mb-6">
+    <strong>Data e horário:</strong> [colocar aqui]<br>
+    <strong>Local:</strong> Colégio Estadual Mendes Gonçalves
+  </p>
+
+  <p class="text-gray-700 italic mb-4">
+    A ausência do torneio não diminui a importância do evento – pelo contrário: a feira continua sendo um espaço de encontro, aprendizado e inspiração.
+  </p>
+
+  <p class="text-center font-semibold text-blue-900">
+    👉 O convite está feito: venha prestigiar a Feira FaTech 2025!
+  </p>
+
+  <div class="mt-6 text-sm text-gray-500 text-center border-t pt-4">
+    ✍️ Por <strong>Ryan Antonio Dos Reis De Oliveira</strong>  
+  </div>
+</div>
+
+      </p>
+      <a href="../index.html" class="btn-primary">Voltar para Notícias</a>
+    </div>
+  </main>
+
+  <footer class="bg-blue-900 text-white py-6 text-center footer-responsaveis fixed bottom-0 w-full">
+    <p>&copy; 2025 FATECH - Feira Tecnológica. Responsável pelo site: <strong>Ryan Antonio</strong>. Responsável N8N: <strong>Tiago Norato</strong>.</p>
+  </footer>
+
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const menuClose = document.getElementById('menu-close');
+    const sidebarMenu = document.getElementById('sidebar-menu');
+    const menuOverlay = document.getElementById('menu-overlay');
+    const hamburgerIcon = document.querySelector('.hamburger-icon');
+
+    function openMenu() {
+      sidebarMenu.classList.remove('-translate-x-full');
+      menuOverlay.classList.remove('opacity-0', 'pointer-events-none');
+      menuOverlay.classList.add('opacity-100', 'pointer-events-auto');
+      hamburgerIcon.classList.add('open');
+    }
+
+    function closeMenu() {
+      sidebarMenu.classList.add('-translate-x-full');
+      menuOverlay.classList.remove('opacity-100', 'pointer-events-auto');
+      menuOverlay.classList.add('opacity-0', 'pointer-events-none');
+      hamburgerIcon.classList.remove('open');
+    }
+
+    function toggleMenu() {
+      if (sidebarMenu.classList.contains('-translate-x-full')) {
+        openMenu();
+      } else {
+        closeMenu();
+      }
+    }
+
+    menuToggle.addEventListener('click', toggleMenu);
+    menuClose.addEventListener('click', closeMenu);
+    menuOverlay.addEventListener('click', closeMenu);
+  </script>
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+    const swiper = new Swiper('.mySwiper', {
+      loop: true,
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+    });
+  </script>
+</body>
+</html>

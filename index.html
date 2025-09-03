@@ -94,6 +94,47 @@
     </div>
   </section>
 
+  <!-- Notícias -->
+  <section id="noticias" class="section-bg" style="background-image: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1400&q=80'); padding:80px 0;">
+    <div class="section-overlay"></div>
+    <div class="blur-overlay"></div>
+    <div class="max-w-6xl mx-auto section-content px-6">
+      <h3 class="text-3xl font-semibold mb-4">NOTÍCIAS</h3>
+      <div class="slideshow-container">
+        <div class="slide active" data-link="noticias/news1.html">
+          <img src="img/campeonato.jpg" alt="Notícia 1" class="slide-image">
+          <div class="slide-text-below">
+            <h4>⚠️Não haverá torneio de jogos eletrônicos esse ano!⚠️</h4>
+            <p>🚨 Atenção, galera! 🚨
+A Feira FaTech 2025 tá chegando e já sabemos que vai ser incrível! 🎉
+Mas atenção: este ano não teremos o torneio de Valorant, que sempre foi uma das atrações mais aguardadas.
+Mesmo assim, a feira continua recheada de projetos criativos, ideias que inspiram e muita coisa boa preparada pelos alunos.
+👉 Cola com a gente, vai valer a pena!</p>
+            <a href="noticias/news1.html" class="btn-primary">Saiba mais</a>
+          </div>
+        </div>
+        <div class="slide" data-link="noticias/news2.html">
+          <img src="img/Logo.png" alt="Notícia 2" class="slide-image">
+          <div class="slide-text-below">
+            <h4>Notícia 2: Título da Segunda Notícia</h4>
+            <p>Descrição breve da segunda notícia sobre a feira.</p>
+            <a href="noticias/news2.html" class="btn-primary">Saiba mais</a>
+          </div>
+        </div>
+        <div class="slide" data-link="noticias/news3.html">
+          <img src="img/gradiente azul.jpg" alt="Notícia 3" class="slide-image">
+          <div class="slide-text-below">
+            <h4>Notícia 3: Título da Terceira Notícia</h4>
+            <p>Descrição breve da terceira notícia sobre a feira.</p>
+            <a href="noticias/news3.html" class="btn-primary">Saiba mais</a>
+          </div>
+        </div>
+        <button class="prev">&#10094;</button>
+        <button class="next">&#10095;</button>
+      </div>
+    </div>
+  </section>
+
   <!-- Sobre -->
   <section id="sobre" class="section-bg" style="background-image: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1400&q=80'); padding:80px 0;">
     <div class="section-overlay"></div>
@@ -375,6 +416,49 @@
     menuToggle.addEventListener('click', toggleMenu);
     menuClose.addEventListener('click', closeMenu);
     menuOverlay.addEventListener('click', closeMenu);
+  </script>
+
+  <script>
+    // Slideshow functionality
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+    const prevBtn = document.querySelector('.prev');
+    const nextBtn = document.querySelector('.next');
+
+    function showSlide(index) {
+      slides.forEach(slide => slide.classList.remove('active'));
+      slides[index].classList.add('active');
+    }
+
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
+    }
+
+    function prevSlide() {
+      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+      showSlide(currentSlide);
+    }
+
+    if (prevBtn) prevBtn.addEventListener('click', prevSlide);
+    if (nextBtn) nextBtn.addEventListener('click', nextSlide);
+
+    // Auto advance every 10 seconds
+    setInterval(nextSlide, 10000);
+
+    // Make images clickable
+    slides.forEach(slide => {
+      const img = slide.querySelector('.slide-image');
+      const link = slide.getAttribute('data-link');
+      if (img && link) {
+        img.addEventListener('click', () => {
+          window.open(link, '_blank');
+        });
+      }
+    });
+
+    // Initial show
+    if (slides.length > 0) showSlide(currentSlide);
   </script>
 
 </body>

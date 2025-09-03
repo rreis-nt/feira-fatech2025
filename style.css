@@ -32,6 +32,28 @@ h1, h2, h3, h4, h5 {
   letter-spacing: -0.2px;
 }
 
+/* Override for news titles to be black and bold */
+.news-title {
+  color: black !important;
+  font-weight: 700 !important;
+}
+
+/* Swiper carousel custom styles */
+.mySwiper {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.mySwiper .swiper-slide img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
+}
+
 /* links and primary actions */
 a { color: var(--accent); transition: color 180ms ease; }
 a:hover { color: var(--accent-2); }
@@ -406,6 +428,20 @@ footer a:hover {
   position: absolute;
   inset: 0;
   background: linear-gradient(180deg, rgba(2,6,23,0.55), rgba(2,6,23,0.55));
+  z-index: 1;
+}
+.blur-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 2;
+  border-radius: 12px;
+}
+.section-bg > .section-content {
+  position: relative;
+  z-index: 3;
 }
 .section-content {
   position: relative;
@@ -1027,4 +1063,120 @@ header img {
 
 .sidebar-nav a:last-child {
   border-bottom: none;
+}
+
+/* =========================
+   SLIDESHOW STYLES
+========================= */
+.slideshow-container {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  overflow: visible; /* Changed from hidden to visible to avoid clipping */
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(2,6,23,0.25);
+  min-height: 560px; /* Increased height slightly for text */
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border: none;
+  padding: 0 0 20px 0; /* Added bottom padding for spacing */
+}
+
+.slide-text-below {
+  margin-bottom: 20px; /* Added bottom margin for spacing */
+}
+
+.slide {
+  position: absolute; /* Revert to absolute for overlapping slides */
+  width: 100%;
+  display: none; /* Hide non-active slides */
+  transition: opacity 0.5s ease;
+  height: auto;
+  overflow: visible;
+}
+
+.slide.active {
+  display: block; /* Show only active slide */
+  opacity: 1;
+  position: absolute;
+}
+
+.slide-image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  cursor: pointer;
+  border-radius: 12px;
+}
+
+.slide-text {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0,0,0,0.7);
+  padding: 20px;
+  color: white;
+  border-radius: 0 0 12px 12px;
+}
+
+.slide-text-below {
+  padding: 15px 10px 0 10px;
+  color: white;
+  background: transparent;
+  border-radius: 0 0 12px 12px;
+  text-align: left;
+}
+
+.slide-text-below h4 {
+  margin: 0 0 10px 0;
+  font-size: 1.2rem;
+}
+
+.slide-text-below p {
+  margin: 0 0 15px 0;
+  font-size: 0.95rem;
+}
+
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 20px;
+  border-radius: 50%;
+  transition: background 0.3s ease;
+}
+
+.prev:hover, .next:hover {
+  background: rgba(0,0,0,0.8);
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+@media (max-width: 640px) {
+  .slide-image {
+    height: 200px;
+  }
+  .slide-text {
+    padding: 15px;
+  }
+  .slide-text h4 {
+    font-size: 1rem;
+  }
+  .slide-text p {
+    font-size: 0.9rem;
+  }
 }
