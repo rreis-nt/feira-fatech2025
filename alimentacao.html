@@ -19,7 +19,7 @@
             <span></span>
           </div>
         </button>
-        <img src="img/fatech.png" alt="FATECH" style="height:3rem; width:auto; background:transparent; margin-left:8px;" />
+        <a href="index.html"><img src="img/fatech.png" alt="FATECH" style="height:3rem; width:auto; background:transparent; margin-left:8px;" /></a>
       </div>
     </div>
   </header>
@@ -57,7 +57,6 @@
     </div>
   </nav>
 
-  <div class="h-24"></div>
 
   <script>
     const menuToggle = document.getElementById('menu-toggle');
@@ -95,44 +94,61 @@
       link.addEventListener('click', closeMenu);
     });
 
-    // Clicking the logo returns to the main menu (index.html)
-    if (logoLink) {
-      logoLink.addEventListener('click', function(event) {
-        event.preventDefault();
-        closeMenu();
-        window.location.href = 'index.html';
-      });
-    }
+
   </script>
 
-  <main class="max-w-6xl mx-auto p-6">
-    <h1 class="text-3xl font-semibold mb-6">Praça de Alimentação</h1>
-    <p class="mb-6">Exemplos de barracas e cardápios. Ajuste a quantidade X conforme necessário.</p>
+  <section class="section-bg" style="background-image: url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1400&q=80'); padding:80px 0 0 0; margin-top: 0;">
+    <div class="section-overlay"></div>
+    <div class="max-w-6xl mx-auto section-content px-6">
+      <h1 class="text-3xl font-semibold mb-6">Praça de Alimentação</h1>
+      <p class="mb-6">Descubra as deliciosas opções de alimentação disponíveis na FATECH. Cada barraca oferece pratos preparados com carinho pelos alunos, com foco em qualidade e criatividade. Aqui estão alguns exemplos de barracas e seus cardápios.</p>
 
-    <div class="cards-grid">
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1551218808-94e220e084d2?auto=format&fit=crop&w=900&q=60" alt="Hambúrguer">
-        <div class="card-body">
-          <h4>Hambúrguer Artesanal</h4>
-          <p>Descrição, ingredientes e preço (exemplo).</p>
+      <div class="cards-grid">
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1551218808-94e220e084d2?auto=format&fit=crop&w=900&q=60" alt="Hambúrguer">
+          <div class="card-body">
+            <h4>Hambúrguer Artesanal</h4>
+            <p>Hambúrgueres suculentos com carne fresca, queijo, alface, tomate e molhos especial especialidade da casa. Preço a partir de R$ 12,00. Opções vegetarianas.</p>
+          </div>
         </div>
-      </div>
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&w=900&q=60" alt="Pastel e doces">
-        <div class="card-body">
-          <h4>Pastel & Doces</h4>
-          <p>Descrição, opções de doces e preços (exemplo).</p>
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&w=900&q=60" alt="Pastel e doces">
+          <div class="card-body">
+            <h4>Pastel & Doces</h4>
+            <p>Pastéis recheados com carne, queijo ou palmito, acompanhados de doces caseiros como brigadeiro e beijinho. Porções a partir de R$ 8,00.</p>
+          </div>
         </div>
-      </div>
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1542444459-db9ca5f7b6e8?auto=format&fit=crop&w=900&q=60" alt="Cafeteria">
-        <div class="card-body">
-          <h4>Cafeteria</h4>
-          <p>Opções de bebidas e lanches (exemplo).</p>
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=900&q=60" alt="Cafeteria">
+          <div class="card-body">
+            <h4>Cafeteria</h4>
+            <p>Cafés, chás, sucos naturais e lanches leves como sanduíches, salgados e saladas. Seu lugar ideal para uma pausa rápida. Ofertas a partir de R$ 5,00.</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=900&q=60" alt="Pizza">
+          <div class="card-body">
+            <h4>Pizza Artesanal</h4>
+            <p>Fatias de pizza com sabores marguerita, calabresa e portuguesa. Massa fina e crocante, preparada no forno a lenha. R$ 6,00 por fatia.</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1559598467-f8b76c8155d0?auto=format&fit=crop&w=900&q=60" alt="Sorvetes">
+          <div class="card-body">
+            <h4>Sorvetes e Gelados</h4>
+            <p>Sorvetes cremosos em sabores chocolate, baunilha, frutas tropicais e opções dietéticas. Copos, Sundays e casquinhas a partir de R$ 4,00.</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&fit=crop&w=900&q=60" alt="Bebidas">
+          <div class="card-body">
+            <h4>Bebidas Refrescantes</h4>
+            <p>Refrigerantes, água, sucos industrializados e de polpa, chás gelados e diversas opções. Opções sem açúcar disponíveis. Garrafas a partir de R$ 3,00.</p>
+          </div>
         </div>
       </div>
     </div>
-  </main>
+  </section>
 
   <!-- unified footer with responsible names -->
   <footer class="bg-blue-900 text-white py-6 text-center footer-responsaveis">

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Atrações - FATECH</title>
+  <title>Praça de Alimentação - FATECH</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="style.css">
 </head>
@@ -19,7 +19,7 @@
             <span></span>
           </div>
         </button>
-        <img src="img/fatech.png" alt="FATECH" style="height:3rem; width:auto; background:transparent; margin-left:8px;" />
+        <a href="index.html"><img src="img/fatech.png" alt="FATECH" style="height:3rem; width:auto; background:transparent; margin-left:8px;" /></a>
       </div>
     </div>
   </header>
@@ -57,7 +57,6 @@
     </div>
   </nav>
 
-  <div class="h-24"></div>
 
   <script>
     const menuToggle = document.getElementById('menu-toggle');
@@ -95,45 +94,80 @@
       link.addEventListener('click', closeMenu);
     });
 
-    // Clicking the logo returns to the main menu (index.html)
-    if (logoLink) {
-      logoLink.addEventListener('click', function(event) {
-        event.preventDefault();
-        closeMenu();
-        window.location.href = 'index.html';
-      });
-    }
+
   </script>
 
-  <main class="max-w-6xl mx-auto p-6">
-    <h1 class="text-3xl font-semibold mb-6">Todas as Atrações</h1>
-    <p class="mb-6">Lista de atrações (exemplo). Ajuste a quantidade X conforme necessário.</p>
+  <section class="section-bg" style="background-image: url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1400&q=80'); padding:80px 0 0 0; margin-top: 0;">
+    <div class="section-overlay"></div>
+    <div class="max-w-6xl mx-auto section-content px-6">
+      <h1 class="text-3xl font-semibold mb-6">Atrações da FATECH</h1>
+      <p class="mb-6">Explore as atrações tecnológicas e administrativas da FATECH. Descubra inovações em Desenvolvimento de Sistemas e práticas em Administração, apresentadas pelos alunos com criatividade e expertise.</p>
 
-    <div class="cards-grid">
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=900&q=60" alt="Atração 1">
-        <div class="card-body">
-          <h4>Robótica</h4>
-          <p>Descrição detalhada da atração Robótica, horários e local no evento.</p>
+      <h2 class="text-2xl font-semibold mb-4">Desenvolvimento de Sistemas</h2>
+      <div class="cards-grid">
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&w=900&q=60" alt="Desenvolvimento Web">
+          <div class="card-body">
+            <h4>Desenvolvimento Web</h4>
+            <p>Aplicações web modernas utilizando HTML, CSS, JavaScript e frameworks como React e Node.js. Projetos interativos e responsivos.</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=900&q=60" alt="Aplicativos Móveis">
+          <div class="card-body">
+            <h4>Aplicativos Móveis</h4>
+            <p>Apps para Android e iOS desenvolvidos com Flutter e React Native. Soluções inovadoras para dispositivos móveis.</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=900&q=60" alt="Bancos de Dados">
+          <div class="card-body">
+            <h4>Bancos de Dados</h4>
+            <p>Gerenciamento de dados com SQL e NoSQL. Projetos de bancos relacionais e não-relacionais para aplicações escaláveis.</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1555255707-c07966088b7b?auto=format&fit=crop&w=900&q=60" alt="Inteligência Artificial">
+          <div class="card-body">
+            <h4>Inteligência Artificial e Machine Learning</h4>
+            <p>Modelos de IA e aprendizado de máquina aplicados em projetos reais, utilizando Python e bibliotecas como TensorFlow.</p>
+          </div>
         </div>
       </div>
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=900&q=60" alt="Atração 2">
-        <div class="card-body">
-          <h4>Impressora 3D</h4>
-          <p>Descrição detalhada da atração Impressora 3D, horários e local no evento.</p>
+
+      <h2 class="text-2xl font-semibold mb-4 mt-12">Administração</h2>
+      <div class="cards-grid">
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=900&q=60" alt="Gestão Empresarial">
+          <div class="card-body">
+            <h4>Gestão Empresarial</h4>
+            <p>Estratégias de gestão para empresas modernas, incluindo planejamento estratégico e tomada de decisões eficazes.</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=900&q=60" alt="Recursos Humanos">
+          <div class="card-body">
+            <h4>Recursos Humanos</h4>
+            <p>Práticas de RH, recrutamento, treinamento e desenvolvimento de equipes para otimizar o capital humano.</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=900&q=60" alt="Finanças">
+          <div class="card-body">
+            <h4>Finanças</h4>
+            <p>Análise financeira, controle de custos e investimentos. Ferramentas para gestão orçamentária e planejamento financeiro.</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=900&q=60" alt="Marketing">
+          <div class="card-body">
+            <h4>Marketing</h4>
+            <p>Estratégias de marketing digital, branding e promoção de produtos. Campanhas criativas e análise de mercado.</p>
+          </div>
         </div>
       </div>
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=900&q=60" alt="Atração 3">
-        <div class="card-body">
-          <h4>Automação Residencial</h4>
-          <p>Descrição detalhada da atração Automação Residencial, horários e local no evento.</p>
-        </div>
-      </div>
-      <!-- Você pode duplicar/excluir cards conforme a quantidade X -->
     </div>
-  </main>
+  </section>
 
   <!-- unified footer with responsible names -->
   <footer class="bg-blue-900 text-white py-6 text-center footer-responsaveis">

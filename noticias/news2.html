@@ -3,9 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Notícia 2 - Título da Segunda Notícia</title>
+  <title>Notícia 2 - Novas Atrações Tecnológicas na FATECH 2025</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="../style.css" />
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
 </head>
 <body class="bg-white text-gray-800" style="background-image: url('../img/news.jpg'); background-size: cover; background-position: center;">
 
@@ -20,7 +22,7 @@
             <span></span>
           </div>
         </button>
-        <img src="../img/fatech.png" alt="FATECH" style="height:3rem; width:auto; background:transparent; margin-left:8px;" />
+        <a href="../index.html"><img src="../img/fatech.png" alt="FATECH" style="height:3rem; width:auto; background:transparent; margin-left:8px;" /></a>
       </div>
     </div>
   </header>
@@ -62,10 +64,67 @@
 
   <main class="max-w-6xl mx-auto px-6 py-24">
     <div class="bg-white bg-opacity-90 rounded-lg shadow-lg p-6">
-      <h1 class="text-4xl font-bold mb-6 news-title">Notícia 2: Título da Segunda Notícia</h1>
-      <img src="../img/Logo.png" alt="Notícia 2" class="mb-6 max-w-full h-auto rounded-lg shadow-lg" />
+      <h1 class="text-4xl font-bold mb-6 news-title">Novas Atrações Tecnológicas na FATECH 2025</h1>
+      <!-- Swiper -->
+      <div class="swiper mySwiper mb-6 rounded-lg shadow-lg">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="../img/campeonato.jpg" alt="Campeonato" class="max-w-full h-auto rounded-lg" />
+          </div>
+          <div class="swiper-slide">
+            <img src="../img/campeao.jpg" alt="Campeão" class="max-w-full h-auto rounded-lg" />
+          </div>
+        </div>
+        <!-- Navigation buttons -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <!-- Pagination dots -->
+        <div class="swiper-pagination"></div>
+      </div>
       <p class="mb-6 text-lg leading-relaxed">
-        Descrição detalhada da segunda notícia sobre a feira. Aqui você pode colocar o conteúdo completo da notícia, imagens adicionais, vídeos, etc.
+        <div class="max-w-3xl mx-auto bg-white bg-opacity-10 backdrop-blur-md p-6 rounded-lg shadow-lg">
+  <h1 class="text-2xl font-bold mb-4 text-center text-blue-900">
+    Novas Atrações Tecnológicas na FATECH 2025
+  </h1>
+
+  <p class="text-gray-700 mb-4">
+    A <strong>Feira FaTech 2025</strong> traz uma gama de inovações tecnológicas preparadas pelos alunos dos cursos de Desenvolvimento de Sistemas e Informática.
+    Prepare-se para se surpreender com projetos que misturam criatividade e tecnologia de ponta!
+  </p>
+
+  <p class="text-gray-700 mb-4">
+    Destaque para a <strong>equipe de robótica</strong>, que apresentará protótipos interativos e competições emocionantes. Veja robôs que resolvem problemas reais
+    e demonstram o futuro da automação.
+  </p>
+
+  <p class="text-gray-700 mb-4">
+    Não perca a <strong>demonstração de impressão 3D</strong>, onde você poderá ver objetos sendo criados em tempo real. Aplicações práticas em diversos campos,
+    desde prototipagem até arte digital.
+  </p>
+
+  <p class="text-gray-700 mb-4">
+    E para completar, projetos de <strong>automação residencial</strong> que mostram como integrar dispositivos inteligentes para melhorar o dia a dia,
+    com foco em eficiência energética e conforto.
+  </p>
+
+  <p class="text-gray-700 mb-6">
+    <strong>Data e horário:</strong> 26 e 27 de setembro de 2024<br>
+    <strong>Local:</strong> Colégio Estadual Mendes Gonçalves
+  </p>
+
+  <p class="text-gray-700 italic mb-4">
+    Essas atrações prometem inspirar e educar, mostrando o potencial dos jovens talentos em tecnologia.
+  </p>
+
+  <p class="text-center font-semibold text-blue-900">
+    👉 Venha conhecer essas inovações na Feira FaTech 2025!
+  </p>
+
+  <div class="mt-6 text-sm text-gray-500 text-center border-t pt-4">
+    ✍️ Por <strong>Ryan Antonio Dos Reis De Oliveira</strong>
+  </div>
+</div>
+
       </p>
       <a href="../index.html" class="btn-primary">Voltar para Notícias</a>
     </div>
@@ -109,5 +168,26 @@
     menuOverlay.addEventListener('click', closeMenu);
   </script>
 
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+    const swiper = new Swiper('.mySwiper', {
+      loop: true,
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+    });
+  </script>
 </body>
 </html>

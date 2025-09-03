@@ -419,7 +419,7 @@ footer a:hover {
 .section-bg {
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
+  background-attachment: scroll; /* changed from fixed to scroll to avoid white line */
   background-repeat: no-repeat;
   position: relative;
   color: #fff;
@@ -468,7 +468,10 @@ footer a:hover {
 .card-body {
   padding: 12px;
   color: #fff;
-  background: rgba(0,0,0,0.45);
+  background: rgba(0,0,0,0.25); /* reduced opacity for blur effect */
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border-radius: 12px;
 }
 .card h4 {
   margin: 0 0 8px 0;
@@ -477,7 +480,7 @@ footer a:hover {
 .card p {
   margin: 0 0 10px 0;
   color: rgba(255,255,255,0.9);
-  font-size: 0.95rem;
+  font-size: 1rem; /* unified font size for all descriptions */
 }
 .card:hover {
   transform: translateY(-6px);
@@ -848,8 +851,27 @@ header, footer { position: relative; }
   .cards-grid { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 640px) {
-  .cards-grid { grid-template-columns: 1fr; }
-  .card img { height: 180px; }
+  .cards-grid { 
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 1.5rem;
+  }
+  .card {
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(2,6,23,0.35);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .card img { 
+    height: 220px; 
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+  }
+  .card-body {
+    padding: 16px;
+    font-size: 1.1rem;
+    flex-grow: 1;
+  }
   input[type="text"], textarea, select {
     padding: 0.9rem;
     border-radius: 10px;
