@@ -1,465 +1,567 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FATECH - Feira Tecnológica</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
-
-</head>
-<body class="bg-gray-50 text-gray-800">
-
-  <!-- unified header (explicit from index) -->
-  <header class="bg-blue-900 text-white px-8 py-4 shadow-lg fixed w-full top-0 left-0 z-50">
-    <div class="max-w-6xl mx-auto flex items-center">
-      <div class="flex items-center">
-        <button id="menu-toggle" class="text-white focus:outline-none">
-          <div class="hamburger-icon">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Agency - Start Bootstrap Theme</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+    <div class="container">
+        <a class="navbar-brand" href="#page-top">
+            <img src="assets/img/navbar-logo.png" alt="Logo" style="width: 150px; height: auto;" />
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Alternar navegação">
+            Menu
+            <i class="fas fa-bars ms-1"></i>
         </button>
-        <a href="index.html"><img src="img/fatech.png" alt="FATECH" style="height:3rem; width:auto; background:transparent; margin-left:8px;" /></a>
-      </div>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+                <li class="nav-item"><a class="nav-link" href="#services">Sobre</a></li>
+                <li class="nav-item"><a class="nav-link" href="#portfolio">Projetos</a></li>
+                <li class="nav-item"><a class="nav-link" href="#about">História</a></li>
+                <li class="nav-item"><a class="nav-link" href="#team">Equipe</a></li>
+            </ul>
+        </div>
     </div>
-  </header>
-  <div style="height: 24px; background: rgba(0, 56, 139, 0.8); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);"></div>
+</nav>
 
-  <!-- Sidebar Menu -->
-  <div id="sidebar-overlay" class="fixed inset-0 bg-black bg-opacity-50 opacity-0 pointer-events-none transition-opacity duration-300 z-40"></div>
-  <nav id="sidebar-menu" class="fixed top-0 left-0 w-64 h-full bg-gradient-to-b from-blue-800 to-blue-900 shadow-2xl transform -translate-x-full transition-transform duration-300 z-50 flex flex-col">
-    <div class="flex justify-between items-center p-4 border-b border-white/20">
-      <span class="text-white font-semibold text-lg">Menu</span>
-      <button id="menu-close" aria-label="Close menu" class="text-white w-8 h-8 flex items-center justify-center hover:bg-white/10 rounded-lg text-2xl focus:outline-none focus:ring-2 focus:ring-white">&times;</button>
-    </div>
-    <div class="flex flex-col py-4 flex-grow overflow-y-auto">
-      <a href="index.html" class="flex items-center gap-3 text-white py-3 px-4 hover:bg-white/10 rounded-lg transition-colors border-b border-white/20">
-        <span class="w-6 text-center">🏠</span> Início
-      </a>
-      <a href="#sobre" class="flex items-center gap-3 text-white py-3 px-4 hover:bg-white/10 rounded-lg transition-colors border-b border-white/20">
-        <span class="w-6 text-center">ℹ️</span> Sobre
-      </a>
-      <a href="#faq" class="flex items-center gap-3 text-white py-3 px-4 hover:bg-white/10 rounded-lg transition-colors border-b border-white/20">
-        <span class="w-6 text-center">❓</span> Perguntas
-      </a>
-      <a href="#avaliacao" class="flex items-center gap-3 text-white py-3 px-4 hover:bg-white/10 rounded-lg transition-colors border-b border-white/20">
-        <span class="w-6 text-center">⭐</span> Avaliação
-      </a>
-      <a href="responsaveis.html" class="flex items-center gap-3 text-white py-3 px-4 hover:bg-white/10 rounded-lg transition-colors">
-        <span class="w-6 text-center">👥</span> Responsáveis
-      </a>
-    </div>
-    <div class="p-4 text-xs text-white/80 border-t border-white/20">
-      <p class="mb-1">FATECH 2025</p>
-      <p class="mb-1">Site: <span class="text-green-400">Ryan Antonio</span></p>
-      <p>N8N: <span class="text-green-400">Tiago Norato</span></p>
-    </div>
-  </nav>
-
-  <!-- Overlay for darkening background -->
-  <div id="menu-overlay" class="fixed inset-0 bg-black bg-opacity-50 opacity-0 pointer-events-none transition-opacity duration-500 z-40"></div>
-
-  <!-- Hero -->
-  <section class="section-bg" style="background-image: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1400&q=60'); padding:100px 0;">
-    <div class="section-overlay"></div>
-    <div class="max-w-6xl mx-auto section-content px-6">
-        <div class="hero-grid mx-auto" style="max-width:1100px;">
-          <div class="hero-left">
-            <div class="hero-info-card center">
-              <strong>26 e 27 de setembro de 2024</strong>
-              <p>Colégio Estadual Mendes Gonçalves<br>Guaíra - Paraná<br>Evento imperdível para todos!</p>
+        <!-- Masthead-->
+        <header class="masthead">
+            <div class="container">
+                <div class="masthead-subheading">Bem Vindo a FaTech!</div>
+                <div class="masthead-heading text-uppercase">sua presença é uma honra</div>
+                <a class="btn btn-primary btn-xl text-uppercase" href="#services">Conheça um pouco mais</a>
             </div>
-          </div>
-          <div class="hero-center">
-            <h2 class="hero-main">FATECH</h2>
-            <div class="hero-subtitles">
-              <div>Feira de Administração e</div>
-              <div>Tecnologia</div>
-              <div class="muted">Mendes Gonçalves</div>
+        </header>
+        <!-- Services-->
+        <section class="page-section" id="services">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">o que é a fatech?</h2>
+                    <h3 class="section-subheading text-muted">Descubra um pouco sobre nossa feira abaixo.</h3>
+                </div>
+                <div class="row text-center">
+                    <div class="col-md-4">
+                        <span class="fa-stack fa-4x">
+                            <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                            <i class="fas fa-shopping-cart fa-stack-1x fa-inverse"></i>
+                        </span>
+                        <h4 class="my-3">E-Commerce</h4>
+                        <p class="text-muted">A Feira Fatech do Colégio Mendes Gonçalves é um evento voltado à inovação e à prática dos cursos técnicos. Ela reúne projetos criativos desenvolvidos pelos alunos, que aplicam seus conhecimentos em soluções reais e demonstram suas habilidades ao público.</p>
+                    </div>
+                    <div class="col-md-4">
+                        <span class="fa-stack fa-4x">
+                            <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                            <i class="fas fa-laptop fa-stack-1x fa-inverse"></i>
+                        </span>
+                        <h4 class="my-3">Alunos e Projetos</h4>
+                        <p class="text-muted">Na Fatech, os estudantes apresentam trabalhos que unem tecnologia, pesquisa e criatividade. É um espaço de aprendizado prático, troca de ideias e valorização do esforço coletivo das turmas.</p>
+                    </div>
+                    <div class="col-md-4">
+                        <span class="fa-stack fa-4x">
+                            <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                            <i class="fas fa-lock fa-stack-1x fa-inverse"></i>
+                        </span>
+                        <h4 class="my-3">Propósito e Impacto</h4>
+                        <p class="text-muted">A feira tem como objetivo aproximar o ensino técnico da comunidade, incentivando o protagonismo dos alunos e destacando a importância da educação voltada para o futuro.</p>
+                    </div>
+                </div>
             </div>
-          </div>
-          <div class="hero-right">
-            <div class="hero-eval-card">
-              <h4 class="eval-title">Avalie Nossa Feira</h4>
-              <p class="eval-copy">Ajude-nos com sua opinião — leve 1 minuto.</p>
-              <a href="#avaliacao" class="btn-evaluate" role="button">Avaliar agora</a>
+        </section>
+        <!-- Portfolio Grid-->
+<section class="page-section bg-light" id="portfolio"> 
+    <div class="container">
+        <div class="text-center">
+            <h2 class="section-heading text-uppercase">Conheça alguns projetos</h2>
+            <h3 class="section-subheading text-muted">Na Feira Fatech do Colégio Mendes Gonçalves, cada projeto representa o resultado de muito estudo, criatividade e trabalho em equipe. Aqui, você pode conhecer de perto as ideias desenvolvidas pelos nossos alunos, que aplicam na prática o que aprendem em sala de aula e transformam conhecimento em inovação.</h3>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-sm-6 mb-4">
+                <!-- Portfolio item 1-->
+                <div class="portfolio-item">
+                    <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal1">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                        </div>
+                        <img class="img-fluid" src="assets/img/portfolio/1.jpg" alt="Torneio de Valorant" />
+                    </a>
+                    <div class="portfolio-caption">
+                        <div class="portfolio-caption-heading">Torneio de Valorant</div>
+                        <div class="portfolio-caption-subheading text-muted">Competição de e-sports que promove estratégia, integração e diversão entre alunos.</div>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-    </div>
-  </section>
-
-  <!-- Notícias -->
-  <section id="noticias" class="section-bg" style="background-image: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1400&q=80'); padding:80px 0;">
-    <div class="section-overlay"></div>
-    <div class="blur-overlay"></div>
-    <div class="max-w-6xl mx-auto section-content px-6">
-      <h3 class="text-3xl font-semibold mb-4">NOTÍCIAS</h3>
-      <div class="slideshow-container">
-        <div class="slide active" data-link="noticias/news1.html">
-          <img src="img/campeonato.jpg" alt="Notícia 1" class="slide-image">
-          <div class="slide-text-below">
-            <h4>⚠️Não haverá torneio de jogos eletrônicos esse ano!⚠️</h4>
-            <p>🚨 Atenção, galera! 🚨
-A Feira FaTech 2025 tá chegando e já sabemos que vai ser incrível! 🎉
-Mas atenção: este ano não teremos o torneio de Valorant, que sempre foi uma das atrações mais aguardadas.
-Mesmo assim, a feira continua recheada de projetos criativos, ideias que inspiram e muita coisa boa preparada pelos alunos.
-👉 Cola com a gente, vai valer a pena!</p>
-            <a href="noticias/news1.html" class="btn-primary">Saiba mais</a>
-          </div>
-        </div>
-        <div class="slide" data-link="noticias/news2.html">
-          <img src="img/Logo.png" alt="Notícia 2" class="slide-image">
-          <div class="slide-text-below">
-            <h4>Novas Atrações Tecnológicas na FATECH 2025</h4>
-            <p>Descubra as inovações em robótica, impressão 3D e automação residencial que os alunos prepararam para a feira!</p>
-            <a href="noticias/news2.html" class="btn-primary">Saiba mais</a>
-          </div>
-        </div>
-        <div class="slide" data-link="noticias/news3.html">
-          <img src="img/gradiente azul.jpg" alt="Notícia 3" class="slide-image">
-          <div class="slide-text-below">
-            <h4>Praça de Alimentação: Delícias Preparadas pelos Alunos</h4>
-            <p>Hambúrgueres artesanais, pastéis e doces feitos pelos estudantes aguardam você na praça de alimentação!</p>
-            <a href="noticias/news3.html" class="btn-primary">Saiba mais</a>
-          </div>
-        </div>
-        <button class="prev">&#10094;</button>
-        <button class="next">&#10095;</button>
-      </div>
-    </div>
-  </section>
-
-  <!-- Sobre -->
-  <section id="sobre" class="section-bg" style="background-image: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1400&q=80'); padding:80px 0;">
-    <div class="section-overlay"></div>
-    <div class="max-w-6xl mx-auto section-content px-6">
-      <h3 class="text-3xl font-semibold mb-4">SOBRE A FEIRA</h3>
-      <div class="frosted-panel mx-auto">
-        <div class="sobre-grid">
-          <div class="sobre-media">
-            <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=900&q=60" alt="Feira - exposição" />
-          </div>
-          <div class="sobre-body">
-            <p class="text-lg leading-relaxed">
-              A FATECH – Feira de Administração e Tecnologia Mendes Gonçalves é um evento que vai além de uma simples feira.
-              É um ambiente de conhecimento, aprendizagem e inovação, onde os estandes são focados em apresentar projetos
-              desenvolvidos pelos alunos de forma envolvente e atrativa. Cada estande busca proporcionar experiências práticas,
-              mostrando empreendedorismo, tecnologia e criatividade.
-            </p>
-            <a class="btn-primary mt-4" href="organizacao.html" target="_blank" rel="noopener">Continue lendo</a>
-          </div>
-          <aside class="sobre-info">
-            <div class="info-box">
-              <strong>26 e 27 de setembro de 2024</strong>
-              <p>Colégio Estadual Mendes Gonçalves<br>Guaíra - Paraná</p>
+            <div class="col-lg-4 col-sm-6 mb-4">
+                <!-- Portfolio item 2-->
+                <div class="portfolio-item">
+                    <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal2">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                        </div>
+                        <img class="img-fluid" src="assets/img/portfolio/2.jpg" alt="Website e Sistema de Avaliações" />
+                    </a>
+                    <div class="portfolio-caption">
+                        <div class="portfolio-caption-heading">Website e Sistema de Avaliações</div>
+                        <div class="portfolio-caption-subheading text-muted">Site da feira integrado com sistema de avaliação por inteligência artificial.</div>
+                    </div>
+                </div>
             </div>
-          </aside>
+            <div class="col-lg-4 col-sm-6 mb-4">
+                <!-- Portfolio item 3-->
+                <div class="portfolio-item">
+                    <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal3">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                        </div>
+                        <img class="img-fluid" src="assets/img/portfolio/3.jpg" alt="Robótica Educacional" />
+                    </a>
+                    <div class="portfolio-caption">
+                        <div class="portfolio-caption-heading">Robótica Educacional</div>
+                        <div class="portfolio-caption-subheading text-muted">Projetos de robótica que estimulam criatividade, lógica e trabalho em equipe.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
+                <!-- Portfolio item 4-->
+                <div class="portfolio-item">
+                    <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal4">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                        </div>
+                        <img class="img-fluid" src="assets/img/portfolio/4.jpg" alt="Design e Identidade Visual" />
+                    </a>
+                    <div class="portfolio-caption">
+                        <div class="portfolio-caption-heading">Design e Identidade Visual</div>
+                        <div class="portfolio-caption-subheading text-muted">Projetos gráficos e visuais que demonstram criatividade e inovação.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6 mb-4 mb-sm-0">
+                <!-- Portfolio item 5-->
+                <div class="portfolio-item">
+                    <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal5">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                        </div>
+                        <img class="img-fluid" src="assets/img/portfolio/5.jpg" alt="Aplicativos Educacionais" />
+                    </a>
+                    <div class="portfolio-caption">
+                        <div class="portfolio-caption-heading">Aplicativos Educacionais</div>
+                        <div class="portfolio-caption-subheading text-muted">Desenvolvimento de apps que auxiliam o aprendizado e a interação entre alunos.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <!-- Portfolio item 6-->
+                <div class="portfolio-item">
+                    <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal6">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                        </div>
+                        <img class="img-fluid" src="assets/img/portfolio/6.jpg" alt="Fotografia e Mídias" />
+                    </a>
+                    <div class="portfolio-caption">
+                        <div class="portfolio-caption-heading">Fotografia e Mídias</div>
+                        <div class="portfolio-caption-subheading text-muted">Projetos de fotografia e mídias que registram e divulgam a feira de forma criativa.</div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </section>
+</section>
 
-  <!-- FAQ -->
-  <section id="faq" class="bg-gray-100 py-16 px-6" style="background-image: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1400&q=80'); background-size: cover; background-position: center; background-attachment: fixed;">
-    <div class="max-w-4xl mx-auto">
-      <h3 class="text-3xl font-semibold mb-8 text-center">Perguntas Frequentes</h3>
-      <div class="space-y-6">
-
-        <div>
-          <h4 class="text-xl font-bold">📌 O que é a FATECH?</h4>
-          <p>A FATECH é a Feira de Administração e Tecnologia Mendes Gonçalves, organizada pelos alunos do colégio
-          para apresentar projetos criativos e tecnológicos.</p>
+     <!-- About-->
+<section class="page-section" id="about">
+    <div class="container">
+        <div class="text-center">
+            <h2 class="section-heading text-uppercase">História da Feira</h2>
+            <h3 class="section-subheading text-muted">Conheça a trajetória da Feira Fatech ao longo dos anos.</h3>
         </div>
-
-        <div>
-          <h4 class="text-xl font-bold">📅 Quando e onde acontece?</h4>
-          <p>O evento acontece nos dias <b>26 e 27 de setembro</b> no Colégio Estadual Mendes Gonçalves, em Guaíra – Paraná.</p>
-        </div>
-
-        <div>
-          <h4 class="text-xl font-bold">👩‍💻 Quem participa da feira?</h4>
-          <p>Alunos dos cursos técnicos de Administração, Desenvolvimento de Sistemas e Informática. Cada grupo é
-          responsável por uma parte da feira, desde estandes até o site e a praça de alimentação.</p>
-        </div>
-
-        <div>
-          <h4 class="text-xl font-bold">🍔 Vai ter praça de alimentação?</h4>
-          <p>Sim! Com opções variadas como hambúrguer artesanal, pastel, cachorro-quente, doces, cafés e muito mais.</p>
-        </div>
-
-        <div>
-          <h4 class="text-xl font-bold">🎯 Qual o propósito da feira?</h4>
-          <p>Estimular o empreendedorismo e a tecnologia, aplicando na prática o que os alunos aprendem em sala de aula.</p>
-        </div>
-
-      </div>
+        <ul class="timeline">
+            <li>
+                <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/1.jpg" alt="..." /></div>
+                <div class="timeline-panel">
+                    <div class="timeline-heading">
+                        <h4>2009-2011</h4>
+                        <h4 class="subheading">O Começo de Tudo!</h4>
+                    </div>
+                    <div class="timeline-body">
+                        <p class="text-muted">A Feira Fatech começou como um pequeno projeto escolar, reunindo os primeiros trabalhos dos cursos técnicos e incentivando a criatividade dos alunos em soluções práticas.</p>
+                    </div>
+                </div>
+            </li>
+            <li class="timeline-inverted">
+                <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/2.jpg" alt="..." /></div>
+                <div class="timeline-panel">
+                    <div class="timeline-heading">
+                        <h4>2012-2015</h4>
+                        <h4 class="subheading">Expansão dos Projetos</h4>
+                    </div>
+                    <div class="timeline-body">
+                        <p class="text-muted">Os projetos ganharam mais diversidade e complexidade, com os alunos explorando áreas como tecnologia, ciência e inovação, tornando a feira mais atrativa para toda a comunidade escolar.</p>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/3.jpg" alt="..." /></div>
+                <div class="timeline-panel">
+                    <div class="timeline-heading">
+                        <h4>2016-2019</h4>
+                        <h4 class="subheading">Consolidação e Reconhecimento</h4>
+                    </div>
+                    <div class="timeline-body">
+                        <p class="text-muted">A feira passou a ser reconhecida como um espaço de inovação, reunindo projetos de destaque e fortalecendo a participação da comunidade escolar, professores e visitantes.</p>
+                    </div>
+                </div>
+            </li>
+            <li class="timeline-inverted">
+                <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/4.jpg" alt="..." /></div>
+                <div class="timeline-panel">
+                    <div class="timeline-heading">
+                        <h4>2020-Presente</h4>
+                        <h4 class="subheading">Inovação com Tecnologia</h4>
+                    </div>
+                    <div class="timeline-body">
+                        <p class="text-muted">Hoje, a Feira Fatech integra tecnologia, como o sistema de avaliação com inteligência artificial, e continua reunindo alunos, professores e a comunidade para celebrar criatividade e aprendizado.</p>
+                    </div>
+                </div>
+            </li>
+            <li class="timeline-inverted">
+                <div class="timeline-image">
+                    <h4>
+                        Seja Parte
+                        <br />
+                        Da Nossa
+                        <br />
+                        História!
+                    </h4>
+                </div>
+            </li>
+        </ul>
     </div>
-  </section>
+</section>
 
-  <!-- Atrações (prévia) -->
-  <section id="atracoes" class="section-bg" style="background-image: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1400&q=80'); padding:80px 0;">
-    <div class="section-overlay"></div>
-    <div class="max-w-6xl mx-auto section-content px-6">
-      <h3 class="text-3xl font-semibold mb-6">Atrações em destaque</h3>
-      <div class="cards-grid mb-6">
-        <!-- Exemplo de X cards; ajuste a quantidade conforme necessário -->
-        <div class="card">
-          <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=900&q=60" alt="Atração 1">
-          <div class="card-body">
-            <h4>Robótica</h4>
-            <p>Equipe de robótica apresentando soluções e competições com protótipos interativos.</p>
-            <a class="btn-primary" href="atracoes.html">Veja mais</a>
-          </div>
+        <!-- Team-->
+        <section class="page-section bg-light" id="team">
+    <div class="container">
+        <div class="text-center">
+            <h2 class="section-heading text-uppercase">Nosso Time</h2>
+            <h3 class="section-subheading text-muted">Conheça os responsáveis pelo projeto.</h3>
         </div>
-        <div class="card">
-          <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=900&q=60" alt="Atração 2">
-          <div class="card-body">
-            <h4>Impressora 3D</h4>
-            <p>Demonstração de impressão 3D em tempo real e aplicações práticas.</p>
-            <a class="btn-primary" href="atracoes.html">Veja mais</a>
-          </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="team-member">
+                    <img class="mx-auto rounded-circle" src="assets/img/team/1.jpg" alt="Ryan Antonio Dos Reis De Oliveira" />
+                    <h4>Ryan Antonio Dos Reis De Oliveira</h4>
+                    <p class="text-muted">Aluno e Responsável pela criação  e desenvolvimento do site!</p>
+                    <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Ryan Twitter Profile"><i class="fab fa-twitter"></i></a>
+                    <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Ryan Facebook Profile"><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Ryan LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="team-member">
+                    <img class="mx-auto rounded-circle" src="assets/img/team/2.jpg" alt="Tiago Norato" />
+                    <h4>Tiago Norato</h4>
+                    <p class="text-muted">Aluno e Responsável pelo sistema de avaliação com I.A</p>
+                    <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Tiago Twitter Profile"><i class="fab fa-twitter"></i></a>
+                    <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Tiago Facebook Profile"><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Tiago LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
         </div>
-        <div class="card">
-          <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=900&q=60" alt="Atração 3">
-          <div class="card-body">
-            <h4>Automação Residencial</h4>
-            <p>Projetos que mostram como integrar dispositivos para melhorar o dia a dia.</p>
-            <a class="btn-primary" href="atracoes.html">Veja mais</a>
-          </div>
+        <div class="row">
+            <div class="col-lg-8 mx-auto text-center">
+                <p class="large text-muted">Nossa equipe é formada por alunos e profissionais dedicados que unem criatividade, tecnologia e paixão para tornar a Feira Fatech um sucesso.</p>
+            </div>
         </div>
-      </div>
-      <a class="btn-outline" href="atracoes.html">Todas as atrações</a>
     </div>
-  </section>
-
-  <!-- Praça de Alimentação (prévia) -->
-  <section id="alimentacao" class="section-bg" style="background-image: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1400&q=80'); padding:80px 0;">
-    <div class="section-overlay"></div>
-    <div class="max-w-6xl mx-auto section-content px-6">
-      <h3 class="text-3xl font-semibold mb-6">Praça de Alimentação</h3>
-      <div class="cards-grid mb-6">
-        <div class="card">
-          <img src="https://images.unsplash.com/photo-1551218808-94e220e084d2?auto=format&fit=crop&w=900&q=60" alt="Alimento 1">
-          <div class="card-body">
-            <h4>Hambúrguer Artesanal</h4>
-            <p>Deliciosos hambúrgueres preparados pelos alunos e parceiros locais.</p>
-            <a class="btn-primary" href="alimentacao.html">Veja mais</a>
-          </div>
+</section>
+        <!-- Testimonials-->
+        <section class="page-section" id="testimonials">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">Depoimentos</h2>
+                    <h3 class="section-subheading text-muted">O que os participantes dizem sobre a Feira FaTech.</h3>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="testimonial-item">
+                            <p class="text-muted">"Como visitante, fiquei impressionado com a criatividade dos alunos. A Feira FaTech é um exemplo de como a educação técnica pode ser inovadora e impactante."</p>
+                            <h5>- Carlos Mendes, Visitante</h5>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="testimonial-item">
+                            <p class="text-muted">"Participar da Feira FaTech foi uma experiência transformadora. Aprendi a valorizar a inovação e o trabalho em equipe, e agora vejo o futuro com mais entusiasmo!"</p>
+                            <h5>- Maria Silva, Aluna de Desenvolvimento de Sistemas</h5>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="testimonial-item">
+                            <p class="text-muted">"Como professora, vejo na Feira FaTech o resultado do esforço dos alunos. É gratificante acompanhar o crescimento e a paixão pela tecnologia."</p>
+                            <h5>- Prof. Ana Costa, Professora</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Footer-->
+        <footer class="footer py-4">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-4 text-lg-start">Copyright &copy; Feira FaTech 2023</div>
+                    <div class="col-lg-4 my-3 my-lg-0">
+                        <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                    <div class="col-lg-4 text-lg-end">
+                        <a class="link-dark text-decoration-none me-3" href="#!">Política de Privacidade</a>
+                        <a class="link-dark text-decoration-none" href="#!">Termos de Uso</a>
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <div class="col-lg-12 text-center">
+                        <p class="mb-1"><strong>Feira FaTech - Colégio Mendes Gonçalves</strong></p>
+                        <p class="mb-1">Endereço: Rua das Inovações, 456 - São Paulo, SP</p>
+                        <p class="mb-1">Email: contato@fatech.edu.br | Telefone: (11) 9876-5432</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Portfolio Modals-->
+        <!-- Portfolio item 1 modal popup-->
+        <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <!-- Project details-->
+                                    <h2 class="text-uppercase">Torneio de Valorant</h2>
+                                    <p class="item-intro text-muted">Uma competição épica que une estratégia, adrenalina e camaradagem!</p>
+                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/1.jpg" alt="Torneio de Valorant" />
+                                    <p>O Torneio de Valorant é uma iniciativa inovadora da Feira FaTech, onde alunos dos cursos técnicos se enfrentam em batalhas virtuais cheias de estratégia e trabalho em equipe. Desenvolvido para promover habilidades como comunicação, planejamento e resiliência, o torneio não apenas diverte, mas também ensina lições valiosas sobre competição saudável e integração escolar. Participantes criam equipes, treinam táticas e competem em rounds emocionantes, transformando o jogo em uma ferramenta educacional poderosa. Venha assistir e torcer pelos futuros campeões!</p>
+                                    <ul class="list-inline">
+                                        <li>
+                                            <strong>Organizadores:</strong>
+                                            Alunos de Informática
+                                        </li>
+                                        <li>
+                                            <strong>Categoria:</strong>
+                                            E-Sports Educacional
+                                        </li>
+                                    </ul>
+                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                        <i class="fas fa-xmark me-1"></i>
+                                        Close Project
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="card">
-          <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&w=900&q=60" alt="Alimento 2">
-          <div class="card-body">
-            <h4>Pastel & Doces</h4>
-            <p>Opções rápidas e sobremesas artesanais para todos os gostos.</p>
-            <a class="btn-primary" href="alimentacao.html">Veja mais</a>
-          </div>
+        <!-- Portfolio item 2 modal popup-->
+        <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <!-- Project details-->
+                                    <h2 class="text-uppercase">Website e Sistema de Avaliações</h2>
+                                    <p class="item-intro text-muted">Tecnologia e inteligência artificial a serviço da educação.</p>
+                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/2.jpg" alt="Website e Sistema de Avaliações" />
+                                    <p>Este projeto inovador da Feira FaTech apresenta um website integrado a um sistema de avaliações baseado em inteligência artificial. Desenvolvido por alunos dedicados, o sistema permite avaliações automáticas e personalizadas, facilitando o feedback e o acompanhamento do desempenho dos participantes. O site é intuitivo, moderno e acessível, promovendo a interação entre alunos, professores e visitantes. Uma solução tecnológica que transforma a forma como a educação é avaliada e aprimorada.</p>
+                                    <ul class="list-inline">
+                                        <li>
+                                            <strong>Organizadores:</strong>
+                                            Alunos de Desenvolvimento Web e IA
+                                        </li>
+                                        <li>
+                                            <strong>Categoria:</strong>
+                                            Tecnologia Educacional
+                                        </li>
+                                    </ul>
+                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                        <i class="fas fa-xmark me-1"></i>
+                                        Close Project
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="card">
-          <img src="https://images.unsplash.com/photo-1542444459-db9ca5f7b6e8?auto=format&fit=crop&w=900&q=60" alt="Alimento 3">
-          <div class="card-body">
-            <h4>Cafeteria</h4>
-            <p>Bebidas quentes e lanches para quem quer descansar e conversar.</p>
-            <a class="btn-primary" href="alimentacao.html">Veja mais</a>
-          </div>
+        <!-- Portfolio item 3 modal popup-->
+        <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <!-- Project details-->
+                                    <h2 class="text-uppercase">Robótica Educacional</h2>
+                                    <p class="item-intro text-muted">Inovação e aprendizado através da robótica.</p>
+                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/3.jpg" alt="Robótica Educacional" />
+                                    <p>Este projeto destaca a aplicação da robótica como ferramenta educacional na Feira FaTech. Os alunos desenvolvem robôs que executam tarefas específicas, estimulando o raciocínio lógico, a criatividade e o trabalho em equipe. A iniciativa visa preparar os estudantes para os desafios tecnológicos do futuro, promovendo habilidades práticas e teóricas. A robótica educacional é uma ponte entre a teoria e a prática, tornando o aprendizado mais dinâmico e envolvente.</p>
+                                    <ul class="list-inline">
+                                        <li>
+                                            <strong>Organizadores:</strong>
+                                            Alunos de Mecatrônica e Automação
+                                        </li>
+                                        <li>
+                                            <strong>Categoria:</strong>
+                                            Tecnologia e Educação
+                                        </li>
+                                    </ul>
+                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                        <i class="fas fa-xmark me-1"></i>
+                                        Close Project
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-      <a class="btn-outline" href="alimentacao.html">Veja todos</a>
-    </div>
-  </section>
-
-  <!-- Avaliação -->
-  <section id="avaliacao" class="section-bg" style="background-image: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1400&q=80'); padding:80px 0;">
-    <div class="section-overlay"></div>
-    <div class="max-w-4xl mx-auto section-content py-16 px-6">
-      <h3 class="text-3xl font-semibold mb-6 text-center">Sua Avaliação</h3>
-      <form id="feedbackForm" class="space-y-6 bg-white shadow-lg rounded-2xl p-8">
-
-        <div>
-          <label class="block font-semibold mb-2">1. O que você achou da nossa feira?</label>
-          <textarea id="pergunta1" class="w-full p-3 border rounded-lg" rows="2"></textarea>
+        <!-- Portfolio item 4 modal popup-->
+        <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <!-- Project details-->
+                                    <h2 class="text-uppercase">Design e Identidade Visual</h2>
+                                    <p class="item-intro text-muted">Criatividade visual que conta histórias.</p>
+                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/4.jpg" alt="Design e Identidade Visual" />
+                                    <p>Este projeto explora o poder do design gráfico na comunicação e identidade visual. Os alunos criam logotipos, banners e materiais visuais para a Feira FaTech, aplicando princípios de design para transmitir mensagens impactantes. A iniciativa destaca a importância da estética e da funcionalidade no mundo digital, incentivando a inovação e a expressão artística. Cada peça é uma obra de arte que reflete a criatividade dos jovens talentos.</p>
+                                    <ul class="list-inline">
+                                        <li>
+                                            <strong>Organizadores:</strong>
+                                            Alunos de Design Gráfico
+                                        </li>
+                                        <li>
+                                            <strong>Categoria:</strong>
+                                            Design e Comunicação Visual
+                                        </li>
+                                    </ul>
+                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                        <i class="fas fa-xmark me-1"></i>
+                                        Close Project
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-
-        <div>
-          <label class="block font-semibold mb-2">2. Qual projeto você achou mais legal?</label>
-          <select id="pergunta2" class="w-full p-3 border rounded-lg">
-            <option value="">Selecione</option>
-            <option>Projeto 1 - Robótica</option>
-            <option>Projeto 2 - Impressora 3D</option>
-            <option>Projeto 3 - Automação Residencial</option>
-            <option>Projeto 4 - Teste</option>
-            <option>Projeto 5 - Site da Feira / Avaliação</option>
-            <option>Outro</option>
-          </select>
+        <!-- Portfolio item 5 modal popup-->
+        <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <!-- Project details-->
+                                    <h2 class="text-uppercase">Aplicativos Educacionais</h2>
+                                    <p class="item-intro text-muted">Apps que transformam o aprendizado.</p>
+                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/5.jpg" alt="Aplicativos Educacionais" />
+                                    <p>Este projeto apresenta aplicativos móveis desenvolvidos pelos alunos para auxiliar no aprendizado. Os apps incluem jogos educacionais, ferramentas de estudo e plataformas interativas que tornam o conhecimento mais acessível e divertido. Desenvolvidos com foco na usabilidade e na inovação, esses aplicativos demonstram como a tecnologia pode enriquecer a educação, promovendo engajamento e retenção de informações.</p>
+                                    <ul class="list-inline">
+                                        <li>
+                                            <strong>Organizadores:</strong>
+                                            Alunos de Desenvolvimento de Software
+                                        </li>
+                                        <li>
+                                            <strong>Categoria:</strong>
+                                            Aplicativos Móveis Educacionais
+                                        </li>
+                                    </ul>
+                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                        <i class="fas fa-xmark me-1"></i>
+                                        Close Project
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-
-        <div>
-          <label class="block font-semibold mb-2">3. Como você avalia este site? (1 a 5)</label>
-          <select id="pergunta3" class="w-full p-3 border rounded-lg">
-            <option value="">Selecione</option>
-            <option>1 - Muito Ruim</option>
-            <option>2 - Ruim</option>
-            <option>3 - Regular</option>
-            <option>4 - Bom</option>
-            <option>5 - Excelente</option>
-          </select>
+        <!-- Portfolio item 6 modal popup-->
+        <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <!-- Project details-->
+                                    <h2 class="text-uppercase">Fotografia e Mídias</h2>
+                                    <p class="item-intro text-muted">Capturando momentos e histórias.</p>
+                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/6.jpg" alt="Fotografia e Mídias" />
+                                    <p>Este projeto reúne fotografias e produções de mídia que documentam a Feira FaTech. Os alunos exploram técnicas de fotografia, edição de vídeo e storytelling visual para registrar os eventos e projetos. A iniciativa destaca a importância da comunicação visual na sociedade moderna, incentivando a criatividade e a sensibilidade artística. Cada imagem conta uma história, preservando memórias e inspirando futuras gerações.</p>
+                                    <ul class="list-inline">
+                                        <li>
+                                            <strong>Organizadores:</strong>
+                                            Alunos de Comunicação e Mídia
+                                        </li>
+                                        <li>
+                                            <strong>Categoria:</strong>
+                                            Fotografia e Produção de Mídia
+                                        </li>
+                                    </ul>
+                                    <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                        <i class="fas fa-xmark me-1"></i>
+                                        Close Project
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-
-        <button type="button" onclick="enviarWhatsApp()" 
-          class="bg-green-600 text-white px-6 py-3 rounded-lg shadow-md hover:bg-green-700">
-          📲 Enviar pelo WhatsApp
-        </button>
-
-      </form>
-    </div>
-  </section>
-
-  <!-- Responsible People Section -->
-  <section id="responsaveis-home" class="section-bg" style="background-image: url('https://cdn.pixabay.com/photo/2024/06/02/14/11/background-8804313_1280.jpg'); padding: 60px 0;">
-    <div class="section-overlay"></div>
-    <div class="max-w-6xl mx-auto section-content px-6 text-white">
-      <h3 class="text-3xl font-semibold mb-8 text-center">Responsáveis Principais</h3>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-        <div class="person-card bg-blue-900 bg-opacity-80 rounded-lg p-6 flex flex-col items-center">
-          <img src="img/ryan.jpeg" alt="Ryan Antonio" class="rounded-full w-32 h-32 object-cover mb-4 shadow-lg" />
-          <h4 class="text-xl font-bold mb-1">Ryan Antonio</h4>
-          <p class="mb-2 text-center">Responsável principal — Criação do site</p>
-          <span class="badge bg-green-600 px-3 py-1 rounded-full text-sm font-semibold">Lead</span>
-        </div>
-        <div class="person-card bg-blue-900 bg-opacity-80 rounded-lg p-6 flex flex-col items-center">
-          <img src="img/tiago.jpeg" alt="Tiago Norato" class="rounded-full w-32 h-32 object-cover mb-4 shadow-lg" />
-          <h4 class="text-xl font-bold mb-1">Tiago Norato</h4>
-          <p class="mb-2 text-center">Responsável N8N</p>
-          <span class="badge bg-green-600 px-3 py-1 rounded-full text-sm font-semibold">N8N Lead</span>
-        </div>
-      </div>
-      <div class="text-center mt-8">
-        <a href="responsaveis.html" class="btn-primary inline-block px-6 py-3 rounded-lg bg-green-600 hover:bg-green-700 transition-colors font-semibold">Saiba Mais</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- unified footer with responsible names -->
-  <footer class="bg-blue-900 text-white py-6 text-center footer-responsaveis">
-    <p>&copy; 2025 FATECH - Feira Tecnológica. Responsável pelo site: <strong>Ryan Antonio</strong>. Responsável N8N: <strong>Tiago Norato</strong>.</p>
-  </footer>
-
-  <!-- Add subtle background images to header/footer and page base via inline style attributes -->
-  <script>
-    // Apply a random background image to each section with class 'section-bg' for visual harmony
-    (function(){
-      const images = [
-        'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1400&q=60',
-        'https://cdn.pixabay.com/photo/2024/06/02/14/11/background-8804313_1280.jpg',
-        'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1400&q=60',
-        'https://images.unsplash.com/photo-1525755662778-989d0524087e?auto=format&fit=crop&w=1400&q=60'
-      ];
-      document.querySelectorAll('.section-bg').forEach((el,i)=>{
-        const img = images[i % images.length];
-        el.style.backgroundImage = `url('${img}')`;
-      });
-
-    })();
-  </script>
-
-  <script>
-    function enviarWhatsApp() {
-      const pergunta1 = document.getElementById("pergunta1").value;
-      const pergunta2 = document.getElementById("pergunta2").value;
-      const pergunta3 = document.getElementById("pergunta3").value;
-
-      const msg = `📋 Avaliação da Feira FATECH:%0A%0A` +
-                  `1. O que achou da feira? %0A- ${pergunta1}%0A%0A` +
-                  `2. Projeto mais legal: %0A- ${pergunta2}%0A%0A` +
-                  `3. Avaliação do site: %0A- ${pergunta3}`;
-
-      const telefone = "5544998596340"; // <-- Troca para o número oficial
-      const url = `https://wa.me/${telefone}?text=${msg}`;
-      window.open(url, "_blank");
-    }
-  </script>
-
-  <script>
-    const menuToggle = document.getElementById('menu-toggle');
-    const menuClose = document.getElementById('menu-close');
-    const sidebarMenu = document.getElementById('sidebar-menu');
-    const menuOverlay = document.getElementById('menu-overlay');
-    const hamburgerIcon = document.querySelector('.hamburger-icon');
-
-    function openMenu() {
-      sidebarMenu.classList.remove('-translate-x-full');
-      menuOverlay.classList.remove('opacity-0', 'pointer-events-none');
-      menuOverlay.classList.add('opacity-100', 'pointer-events-auto');
-      hamburgerIcon.classList.add('open');
-    }
-
-    function closeMenu() {
-      sidebarMenu.classList.add('-translate-x-full');
-      menuOverlay.classList.remove('opacity-100', 'pointer-events-auto');
-      menuOverlay.classList.add('opacity-0', 'pointer-events-none');
-      hamburgerIcon.classList.remove('open');
-    }
-
-    function toggleMenu() {
-      if (sidebarMenu.classList.contains('-translate-x-full')) {
-        openMenu();
-      } else {
-        closeMenu();
-      }
-    }
-
-    menuToggle.addEventListener('click', toggleMenu);
-    menuClose.addEventListener('click', closeMenu);
-    menuOverlay.addEventListener('click', closeMenu);
-  </script>
-
-  <script>
-    // Slideshow functionality
-    let currentSlide = 0;
-    const slides = document.querySelectorAll('.slide');
-    const prevBtn = document.querySelector('.prev');
-    const nextBtn = document.querySelector('.next');
-
-    function showSlide(index) {
-      slides.forEach(slide => slide.classList.remove('active'));
-      slides[index].classList.add('active');
-    }
-
-    function nextSlide() {
-      currentSlide = (currentSlide + 1) % slides.length;
-      showSlide(currentSlide);
-    }
-
-    function prevSlide() {
-      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-      showSlide(currentSlide);
-    }
-
-    if (prevBtn) prevBtn.addEventListener('click', prevSlide);
-    if (nextBtn) nextBtn.addEventListener('click', nextSlide);
-
-    // Auto advance every 10 seconds
-    setInterval(nextSlide, 10000);
-
-    // Make images clickable
-    slides.forEach(slide => {
-      const img = slide.querySelector('.slide-image');
-      const link = slide.getAttribute('data-link');
-      if (img && link) {
-        img.addEventListener('click', () => {
-          window.open(link, '_blank');
-        });
-      }
-    });
-
-    // Initial show
-    if (slides.length > 0) showSlide(currentSlide);
-  </script>
-
-</body>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <!-- * *                               SB Forms JS                               * *-->
+        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+    </body>
 </html>
