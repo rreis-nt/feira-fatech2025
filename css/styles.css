@@ -11334,3 +11334,15 @@ section#contact form#contactForm :-ms-input-placeholder {
     margin-bottom: 1.5rem !important;
   }
 }
+
+.radius-1 {
+  border-radius: 0.25rem !important;
+}
+
+.radius-2 {
+  border-radius: 0.5rem !important;
+}
+
+.radius-3 {
+  border-radius: 1rem !important;
+}
