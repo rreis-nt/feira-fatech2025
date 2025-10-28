@@ -2848,8 +2848,8 @@ textarea.form-control-lg {
   --bs-btn-bg: #ffc800;
   --bs-btn-border-color: #ffc800;
   --bs-btn-hover-color: #fff;
-  --bs-btn-hover-bg: #d9aa00;
-  --bs-btn-hover-border-color: #cca000;
+  --bs-btn-hover-bg: #ffc800;
+  --bs-btn-hover-border-color: #ffc800;
   --bs-btn-focus-shadow-rgb: 255, 208, 38;
   --bs-btn-active-color: #fff;
   --bs-btn-active-bg: #cca000;
@@ -11345,6 +11345,61 @@ section#contact form#contactForm :-ms-input-placeholder {
 
 .radius-3 {
   border-radius: 1rem !important;
+}
+
+/* Efeito de brilho animado nos botões .btn-primary */
+.btn-primary {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(120deg, transparent 0%, #fff 50%, transparent 100%);
+  opacity: 0.5;
+  transform: translateX(-100%) skewX(-20deg);
+  transition: transform 0.8s cubic-bezier(0.4,0,0.2,1);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.btn-success {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+.btn-success::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(120deg, transparent 0%, #fff 50%, transparent 100%);
+  opacity: 0.5;
+  transform: translateX(-100%) skewX(-20deg);
+  transition: transform 0.8s cubic-bezier(0.4,0,0.2,1);
+  pointer-events: none;
+  z-index: 2;
+}
+.btn-success:hover::before,
+.btn-success:focus::before {
+  transform: translateX(100%) skewX(-20deg);
+}
+.btn-success:active::before {
+  opacity: 0.3;
+}
+.btn-primary:hover::before,
+.btn-primary:focus::before {
+  transform: translateX(100%) skewX(-20deg);
+}
+.btn-primary:active::before {
+  opacity: 0.3;
 }
 
 .margin-top-1 {
