@@ -10963,14 +10963,14 @@ header.masthead .masthead-heading {
   font-size: 3.25rem;
   font-weight: 700;
   line-height: 3.25rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
 @media (min-width: 768px) {
   header.masthead {
-    padding-top: 17rem;
-    padding-bottom: 12.5rem;
+    padding-top: 15rem;
+    padding-bottom: 10.5rem;
   }
   header.masthead .masthead-subheading {
     font-size: 2.25rem;
@@ -10982,7 +10982,7 @@ header.masthead .masthead-heading {
     font-size: 4.5rem;
     font-weight: 700;
     line-height: 4.5rem;
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
   }
 }
 #portfolio .portfolio-item {
@@ -11421,5 +11421,23 @@ section#contact form#contactForm :-ms-input-placeholder {
   .container-buttons {
     flex-direction: row;
     flex-wrap: wrap;
+  }
+}
+
+.font-Montserrat {
+  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;
+  font-weight: 400 !important;
+  text-transform: uppercase !important;
+}
+.datas-evento {
+  margin-bottom: 3rem;
+}
+.text-programacao {
+  text-align: initial;
+  margin-left: 55px;
+}
+@media (max-width: 576px) {
+  .text-programacao {
+    margin-left: 39px;
   }
 }
