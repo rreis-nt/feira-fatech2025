@@ -344,8 +344,8 @@
                 <h3 class="section-subheading text-muted">Sua opinião é importante! Ajude-nos a melhorar compartilhando
                     seu feedback sobre os projetos apresentados na Feira FaTech.</h3>
                 <a class="btn btn-primary btn-xl text-uppercase"
-                    href="https://docs.google.com/forms/d/aquie/1FAIpQLSf1l14an0afUMLLfFsn0czf77osi4fMVh56dbo9V_sfMGNQYg/viewform?usp=sharing&ouid=112920967660868551721"
-                    target="_blank"><i class="fa-solid fa-star"></i> Avaliar Projetos</a>
+                    href="#"
+                    onclick="openChatAndSendMessage('Olá, eu gostaria de dar minha opinião sobre a feira'); return false;"><i class="fa-solid fa-star"></i> Avaliar Projetos</a>
             </div>
         </div>
     </section>
@@ -963,6 +963,137 @@
             <button id="close-popup-btn" class="btn btn-primary">Fechar</button>
         </div>
     </div>
+
+    <!-- Chat Widget Button -->
+    <button id="chat-widget-button" aria-label="Abrir chat">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+        </svg>
+    </button>
+
+    <!-- Chat Widget -->
+    <div id="chat-widget-container">
+        <div id="chat-widget-header">
+            <span style="color: #ffffff;">FATECH AI</span>
+            <button style="color: #fff;" onclick="closeChatWidget()">✖</button>
+        </div>
+        <div id="chat-widget-body">
+            <p style="margin-bottom: 20px;"><strong>Olá 👋, como podemos ajudar?</strong></p>
+        </div>
+        <div id="chat-widget-footer">
+            <input type="text" id="chat-widget-input" placeholder="Digite sua mensagem aqui...">
+            <button id="chat-widget-send" style="color: #fff;">Enviar</button>
+        </div>
+    </div>
+
+    <!-- Chat Widget Script -->
+    <script>
+        window.ChatWidgetConfig = {
+            webhook: {
+                url: 'https://noratos.app.n8n.cloud/webhook/92157ba5-ab90-4f30-b8dc-e00d73aa1e52/chat',
+                route: 'general'
+            },
+            style: {
+                primaryColor: '#ffc800',
+                secondaryColor: '#ffb700',
+                position: 'right',
+                backgroundColor: '#ffffff',
+                fontColor: '#333333'
+            }
+        };
+
+        // Function to generate or retrieve a unique chat ID
+        function getChatId() {
+            let chatId = sessionStorage.getItem("chatId");
+            if (!chatId) {
+                chatId = "chat_" + Math.random().toString(36).substr(2, 9);
+                sessionStorage.setItem("chatId", chatId);
+            }
+            return chatId;
+        }
+
+        // Show chat widget and hide bubble
+        document.getElementById("chat-widget-button").addEventListener("click", function() {
+            document.getElementById("chat-widget-container").style.display = "flex";
+            document.getElementById("chat-widget-button").style.display = "none";
+        });
+
+        // Close chat widget and show bubble
+        function closeChatWidget() {
+            document.getElementById("chat-widget-container").style.display = "none";
+            document.getElementById("chat-widget-button").style.display = "flex";
+        }
+
+        // Open chat with pre-filled message
+        function openChatWithMessage(message) {
+            document.getElementById("chat-widget-container").style.display = "flex";
+            document.getElementById("chat-widget-button").style.display = "none";
+            document.getElementById("chat-widget-input").value = message;
+            document.getElementById("chat-widget-input").focus();
+        }
+
+        // Open chat and send message automatically
+        function openChatAndSendMessage(message) {
+            document.getElementById("chat-widget-container").style.display = "flex";
+            document.getElementById("chat-widget-button").style.display = "none";
+            document.getElementById("chat-widget-input").value = message;
+            
+            // Simulate click on send button after a short delay
+            setTimeout(function() {
+                document.getElementById("chat-widget-send").click();
+            }, 300);
+        }
+
+        // Send message to n8n webhook
+        document.getElementById("chat-widget-send").addEventListener("click", function() {
+            let message = document.getElementById("chat-widget-input").value;
+            if (message.trim() === "") return;
+
+            let chatBody = document.getElementById("chat-widget-body");
+            let newMessage = document.createElement("p");
+            newMessage.textContent = message;
+            newMessage.style.color = "#111";
+            newMessage.style.background = "#ffc800";
+            newMessage.style.padding = "12px";
+            newMessage.style.borderRadius = "8px";
+            newMessage.style.marginBottom = "15px";
+            chatBody.appendChild(newMessage);
+
+            let chatId = getChatId();
+
+            fetch(window.ChatWidgetConfig.webhook.url, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    chatId: chatId,
+                    message: message,
+                    route: window.ChatWidgetConfig.webhook.route
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                let botMessage = document.createElement("p");
+                botMessage.innerHTML = data.output || "Sorry, I couldn't understand that.";
+                botMessage.style.color = "#333";
+                botMessage.style.background = "#f1f1f1";
+                botMessage.style.padding = "12px";
+                botMessage.style.borderRadius = "8px";
+                botMessage.style.marginBottom = "15px";
+                chatBody.appendChild(botMessage);
+                chatBody.scrollTop = chatBody.scrollHeight;
+            })
+            .catch(error => console.error("Error:", error));
+
+            document.getElementById("chat-widget-input").value = "";
+        });
+
+        // Send message on Enter key
+        document.getElementById("chat-widget-input").addEventListener("keypress", function(e) {
+            if (e.key === "Enter") {
+                document.getElementById("chat-widget-send").click();
+            }
+        });
+    </script>
 </body>
 
 </html>
